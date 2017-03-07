@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* search */
+
+.search {
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.search_copier {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* dl formatting */
+
+.dl-horizontal dt {
+  text-align: left;
+  margin-bottom: 0.5em;
+  width: auto;
+  padding-right: 1em;
+}
+
+.dl-horizontal dd {
+  margin-left: 0;
+  margin-bottom: 0.5em;
+}

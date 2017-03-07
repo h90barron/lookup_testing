@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Manufacturer</th>
+      <th>Supports Papercut</th>
+      <th>Supports Coinop</th>
+      <th>Supports card reader</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= div_for copier do |f| %>
+    <tr>
+      <td><%= f.name %></td>
+      <td><%= f.oem %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

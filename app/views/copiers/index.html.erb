@@ -1,0 +1,32 @@
+<%= render 'shared/search' %>
+
+<!-- change table headers -->
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Manufacturer</th>
+      <th>Marketer</th>
+      <th>Supports Papercut</th>
+      <th>Embedded Platform</th>
+      <th>Dependencies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= div_for @copier do |f| %>
+    <tr data-link="<%= copier_path(f) %>">
+      <td><%= f.name %></td>
+      <td><%= f.oem %></td>
+      <td><%= f.marketer %></td>
+      <td><%= f.pc_embedded %></td>
+      <td><%= f.embedded_platform %></td>
+      <td><%= f.pc_dependency %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

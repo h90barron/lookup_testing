@@ -13,4 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+
+
+//use turbolinks:load to avoid DOM load issues
+$(document).on('turbolinks:load', function() {
+    $("tr[data-link]").click(function() {
+    window.location = $(this).data('link');
+    });
+})

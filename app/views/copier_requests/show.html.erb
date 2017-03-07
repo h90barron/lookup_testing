@@ -1,0 +1,71 @@
+<div class="container">
+  <h3>Request details</h3>
+  
+  <%= link_to "Edit", edit_request_path %>
+  <p></p>
+  
+  <%= link_to "Delete", request_path, :method => :delete %>
+  <p></p>
+  
+  <%= link_to "Approve", request_path, :method => :accept %>
+</div>
+
+<p></p>
+
+<div class="container">
+  <dl class="dl-horizontal">
+    <dt>Requester: </dt>
+    <dd><%= @request.user_name %></dd>
+    
+    <dt>Phone number: </dt>
+    <dd><%= @request.user_phone %></dd>
+    
+    <dt>Model: </dt>
+    <dd><%= @request.req_name %></dd>
+  
+    <dt>Manufacturer: </dt>
+    <dd><%= @request.req_oem %></dd>
+  
+    <dt>Marketer: </dt>
+    <dd><%= @request.req_marketer %></dd>
+  
+    <dt>Supports Papercut embeded appplication: </dt>
+    <dd><%= @request.req_pc_embedded %></dd>
+  
+    <dt>Embedded Platform: </dt>
+    <dd><%= @request.req_embedded_platform %></dd>
+  
+    <dt>Supports papercut integrated scanning: </dt>
+    <dd><%= @request.req_pc_int_scanning %></dd>
+  
+    <dt>Dependencies for papercut: </dt>
+    <dd><%= @request.req_pc_dependency %></dd>
+  
+    <dt>Dependency details: </dt>
+    <dd><%= @request.req_pc_dependency_detail %></dd>
+  
+    <dt>General notes: </dt>
+    <dd><%= @request.req_general_notes %></dd>
+  
+    <dt>Also sold as: </dt>
+    <dd><%= @request.req_aka %></dd>
+  
+    <dt>Introduction date: </dt>
+    <dd><%= @request.req_intro_date.to_s %></dd>
+  
+    <dt>Discontinued date: </dt>
+    <dd><%= @request.req_disc_date.to_s %></dd>
+  
+    <dt>Supports Printing: </dt>
+    <dd><%= @request.req_print %></dd>
+  
+    <dt>Supports Copying: </dt>
+    <dd><%= @request.req_copy %></dd>
+  
+    <dt>Supports Scanning: </dt>
+    <dd><%= @request.req_scan %></dd>
+  
+    <dt>Supports Faxing: </dt>
+    <dd><%= @request.req_fax %></dd>
+  </dl>
+</div>

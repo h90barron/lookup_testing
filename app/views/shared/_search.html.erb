@@ -1,0 +1,24 @@
+<form>
+<div class="form-group">
+  <label for="search_copier">Copier Search</label>
+    <%= search_form_for @q, html: { class: "form-inline", id: "search_copier" } do |f| %>
+      <div class="field">
+        <%= f.search_field :name_or_oem_cont, placeholder: "Search...", class: "form-control" %>
+      </div>
+      <div class="field">
+        <%= f.label :supports_papercut_embedded_application %>
+        <%= f.check_box :pc_embedded_true, include_hidden: false %>
+      </div>
+      <div class="field">
+        <%= f.select :marketer_cont, [['', ''], ['Savin', 'Savin'], ['Fuji Xerox', 'Fuji Xerox'], ['Toshiba', 'Toshiba']] %>
+      </div>
+    <% end %>
+  </div>
+
+
+  <!--<div class="form-group">-->
+  <!--  <label for="formGroupExampleInput2">Another label</label>-->
+  <!--  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">-->
+  <!--</div>-->
+</form>
+

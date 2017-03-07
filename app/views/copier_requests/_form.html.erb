@@ -1,0 +1,110 @@
+<%= form_for @request do |f| %>
+  <div class="form-group">
+    <%= f.text_field :user_name, placeholder: "Requester's name", class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.text_field :user_phone, placeholder: "Phone number", class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.text_field :req_name, placeholder: "Copier Name", class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.text_field :req_oem, placeholder: "Manufacturer", class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.text_field :req_marketer, placeholder: "Marketer", class: "form-control" %>
+  </div>
+  
+  <p></p>
+  
+  
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :supports_papercut_embed %>
+      <%= f.check_box :req_pc_embedded %>
+    </div>
+    <div class="field">
+      <%= f.text_field :req_embedded_platform, placeholder: "Embedded Platform", class: "form-control" %>
+    </div>
+  </div>
+  
+  <p></p>
+  
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :supports_papercut_integrated_scanning %>
+      <%= f.check_box :req_pc_int_scanning %>
+    </div>
+  </div>
+  
+  <p></p>
+  
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :papercut_dependencies %>
+      <%= f.check_box :req_pc_dependency %>
+    </div>
+    <div class="field">
+      <%= f.text_field :req_pc_dependency_detail, placeholder: "Dependency details", class: "form-control" %>
+    </div>
+  </div>
+  
+  <p></p>
+  
+  <div class="form-group">
+    <div class="field">
+      <%= f.text_field :req_general_notes, placeholder: "General notes", class: "form-control" %>
+    </diV>
+  </div>
+  
+  <p></p>
+  
+  <div class="form-group">
+    <div class="field">
+      <%= f.text_field :req_aka, placeholder: "Also sold as", class: "form-control" %>
+    </div>
+  </div>
+  
+  <p></p>
+  
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :introduction_date %>
+      <%= f.datetime_select :req_intro_date %>
+    </div>
+    <div class="field">
+      <%= f.label :discontinued_date %>
+      <%= f.datetime_select :req_disc_date %>
+    </div>
+  </div>
+  
+  <p></p>
+  
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :supports_printing %>
+      <%= f.check_box :req_print %>
+    </div>
+    <div class="field">
+      <%= f.label :supports_copying %>
+      <%= f.check_box :req_copy %>
+    </div>
+    <div class="field">
+      <%= f.label :supports_scanning %>
+      <%= f.check_box :req_scan %>
+    </div>
+    <div class="field">
+      <%= f.label :supports_faxing %>
+      <%= f.check_box :req_fax %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+  
+<% end %>

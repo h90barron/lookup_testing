@@ -1,0 +1,25 @@
+<!-- correct for new fields -->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Manufacturer</th>
+      <th>Marketer</th>
+      <th>Supports Papercut</th>
+      <th>Embedded Platform</th>
+      <th>Dependencies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= div_for @requests do |f| %>
+    <tr data-link="<%= request_path(f) %>">
+      <td><%= f.req_name %></td>
+      <td><%= f.req_oem %></td>
+      <td><%= f.req_marketer %></td>
+      <td><%= f.req_pc_embedded %></td>
+      <td><%= f.req_embedded_platform %></td>
+      <td><%= f.req_pc_dependency %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

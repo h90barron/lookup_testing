@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <%= div_for @requests do |f| %>
-    <tr data-link="<%= request_path(f) %>">
+    <tr data-link="<%= copier_request_path(f) %>">
       <td><%= f.req_name %></td>
       <td><%= f.req_oem %></td>
       <td><%= f.req_marketer %></td>

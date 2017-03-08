@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308195513) do
+ActiveRecord::Schema.define(version: 20170308202728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 20170308195513) do
   end
 
   create_table "copiers", force: :cascade do |t|
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "marketer"
     t.boolean  "pc_embedded"
     t.string   "embedded_platform"
@@ -59,6 +59,13 @@ ActiveRecord::Schema.define(version: 20170308195513) do
     t.boolean  "fax"
     t.string   "name"
     t.string   "oem"
+    t.boolean  "card_reader_support"
+    t.boolean  "vending_connector"
+    t.string   "vending_connector_oem"
+    t.string   "vending_connector_ex"
+    t.string   "vending_connector_cpad"
+    t.string   "card_reader_mode"
+    t.string   "card_reader_types"
   end
 
   create_table "oems", force: :cascade do |t|

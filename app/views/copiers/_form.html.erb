@@ -5,11 +5,12 @@
   </div>
   
   <div class="form-group">
-    <%= f.text_field :oem, placeholder: "Manufacturer", class: "form-control" %>
+    <%= f.label :manufacturer %>
+    <%= f.collection_select :oem, Oem.all, :name, :name, prompt: true %>
   </div>
   
   <div class="form-group">
-    <%= f.text_field :marketer, placeholder: "Marketer", class: "form-control" %>
+    <%= f.collection_select :marketer, Oem.all, :name, :name, prompt: true %>
   </div>
   
   <p></p>

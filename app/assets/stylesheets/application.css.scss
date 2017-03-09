@@ -16,6 +16,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* general */
+body {
+  background-color: #141414;
+}
+#main-container {
+  background: white;
+}
+
+.navbar navbar-default {
+  background-color: #8fbe3e;
+}
+
+
+
 /* search */
 
 .search {
@@ -26,6 +40,12 @@
 .search_copier {
   width: 70%;
   margin: 0 auto;
+}
+
+.search_filters {
+  #display: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* dl formatting */

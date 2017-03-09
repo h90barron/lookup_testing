@@ -22,8 +22,10 @@ class CopiersController < ApplicationController
   end
   
   def index
-    @q = Copier.search(params[:q])
+    @q = Copier.ransack(params[:q])
     @copier = @q.result
+    log_search params[:q]
+    
     #@search.build_condition
     
     # @q = Copier.search(params[:q])

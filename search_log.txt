@@ -1,0 +1,39 @@
+{"name_cont"=>"271", "oem_cont"=>""}
+{"name_cont"=>"271", "oem_cont"=>""}
+{"name_cont"=>"271", "oem_cont"=>""}
+{"name_cont"=>"271", "oem_cont"=>""}
+{"name_cont"=>"271", "oem_cont"=>""}
+{"name_cont"=>"271", "oem_cont"=>""}
+{"name_cont"=>"271", "oem_cont"=>""}
+
+{"name_cont"=>"ex", "oem_cont"=>""}
+{"name_cont"=>"ex", "oem_cont"=>"Ricoh"}
+{"name_cont"=>"ex", "pc_embedded_true"=>"1", "oem_cont"=>"Ricoh"}
+
+{"name_cont"=>"", "oem_cont"=>"Xerox"}
+
+
+
+
+{"name_cont"=>"", "pc_embedded_true"=>"1", "oem_cont"=>"Xerox"}
+{"name_cont"=>"", "oem_cont"=>"Xerox"}
+{"name_cont"=>"", "pc_embedded_true"=>"1", "oem_cont"=>"Xerox"}
+{"name_cont"=>"", "pc_embedded_true"=>"1", "oem_cont"=>"Xerox"}
+{"name_cont"=>"", "oem_cont"=>"Xerox"}
+{"name_cont"=>"dfads", "oem_cont"=>"Xerox"}
+{"name_cont"=>"dfads", "oem_cont"=>"Xerox"}
+{"name_cont"=>"dfads", "oem_cont"=>"Xerox"}
+{"name_cont"=>"21", "oem_cont"=>""}
+{"name_cont"=>"21", "oem_cont"=>"Xerox"}
+{"name_cont"=>"21", "oem_cont"=>""}
+{"name_cont"=>"21", "oem_cont"=>""}
+
+{"name_cont"=>"", "oem_cont"=>""}
+{"name_cont"=>"", "oem_cont"=>""}
+{"name_cont"=>"", "oem_cont"=>""}
+{"name_cont"=>"", "oem_cont"=>""}
+{"name_cont"=>"", "oem_cont"=>""}
+{"name_cont"=>"", "oem_cont"=>""}
+{"name_cont"=>"", "oem_cont"=>""}
+{"name_cont"=>"", "oem_cont"=>""}
+{"name_cont"=>"", "oem_cont"=>""}

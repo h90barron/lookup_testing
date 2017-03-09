@@ -58,7 +58,9 @@ class CopierRequestsController < ApplicationController
   private
     def copier_request_params
       params.require(:copier_request).permit(:user_name, :user_phone, :req_name, :req_oem, :req_marketer, :req_pc_embedded, :req_embedded_platform,
-                     :req_pc_int_scanning, :req_pc_dependency, :req_pc_dependency_detail, :req_general_notes, 
-                     :req_aka, :req_intro_date, :req_disc_date, :req_print, :req_scan, :req_copy, :req_fax)
+                                             :req_pc_int_scanning, :req_pc_dependency, :req_pc_dependency_detail, :req_general_notes, 
+                                             :req_aka, :req_intro_date, :req_disc_date, :req_print, :req_scan, :req_copy, :req_fax, :req_card_reader_support,
+                                             :req_vending_connector, :req_vending_connector_oem, :req_vending_connector_ex, :req_vending_connector_cpad,
+                                             :req_card_reader_mode, :req_card_reader_types)
     end
 end

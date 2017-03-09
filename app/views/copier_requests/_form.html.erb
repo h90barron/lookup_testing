@@ -12,11 +12,13 @@
   </div>
   
   <div class="form-group">
-    <%= f.text_field :req_oem, placeholder: "Manufacturer", class: "form-control" %>
+    <%= f.label :manufacturer %>
+    <%= f.collection_select :req_oem, Oem.all, :name, :name, prompt: true  %>
   </div>
   
   <div class="form-group">
-    <%= f.text_field :req_marketer, placeholder: "Marketer", class: "form-control" %>
+    <%= f.label :marketer %>
+    <%= f.collection_select :req_marketer, Oem.all, :name, :name, prompt: true %>
   </div>
   
   <p></p>
@@ -100,6 +102,40 @@
     <div class="field">
       <%= f.label :supports_faxing %>
       <%= f.check_box :req_fax %>
+    </div>
+  </div>
+  
+  <h3>Cards and Hardware</h3>
+  
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :card_reader_support %>
+      <%= f.check_box :req_card_reader_support %>
+    </div>
+    <div class="field">
+      <%= f.label :vending_connector %>
+      <%= f.check_box :req_vending_connector %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :vending_connector_manufacturer %>
+      <%= f.select :req_vending_connector_oem, options_for_select(["vc_oem_1", "vc_oem_2"]), prompt: true  %>
+    </div>
+    <div class="field">
+      <%= f.label :vending_connector_ex %>
+      <%= f.select :req_vending_connector_ex, options_for_select(["vc_ex_1", "vc_ex_2"]), prompt: true %>
+    </div>
+    <div class="field">
+      <%= f.label :vending_connector_cpad %>
+      <%= f.select :req_vending_connector_cpad, options_for_select(["vc_cpad_1", "vc_cpad_2"]), prompt: true %>
+    </div>
+    <div class="field">
+      <%= f.label :card_reader_mode %>
+      <%= f.select :req_card_reader_mode, options_for_select(["card_reader_mode_1", "card_reader_mode_2"]), prompt: true %>
+    </div>
+    <div class="field">
+      <%= f.label :card_reader_type %>
+      <%= f.select :req_card_reader_types, options_for_select(["card_reader_type_1", "card_reader_type_2"]), prompt: true %>
     </div>
   </div>
   

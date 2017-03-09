@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308202728) do
+ActiveRecord::Schema.define(version: 20170308215043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "copier_requests", force: :cascade do |t|
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "req_name"
     t.string   "user_name"
     t.string   "user_phone"
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 20170308202728) do
     t.boolean  "req_copy"
     t.boolean  "req_scan"
     t.boolean  "req_fax"
+    t.boolean  "req_card_reader_support"
+    t.boolean  "req_vending_connector"
+    t.string   "req_vending_connector_oem"
+    t.string   "req_vending_connector_ex"
+    t.string   "req_vending_connector_cpad"
+    t.string   "req_card_reader_mode"
+    t.string   "req_card_reader_types"
   end
 
   create_table "copiers", force: :cascade do |t|

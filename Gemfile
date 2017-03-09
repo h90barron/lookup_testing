@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'responders', '~> 2.0'
 gem 'ransack'
+gem 'populator'
 
 
 # Use ActiveModel has_secure_password

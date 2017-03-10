@@ -25,7 +25,7 @@ $(document).on('turbolinks:load', function() {
 })
 
 $(document).on('turbolinks:load', function(){
-    $(".hidden_searc").click(function(){
+    $(".hidden_search").click(function(){
         $(".search_filters").toggle(250);
     });
 });

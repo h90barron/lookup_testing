@@ -17,16 +17,19 @@
 @import "bootstrap";
 
 /* general */
-body {
-  background-color: #141414;
-}
-#main-container {
-  background: white;
-}
+// body {
+//   background-color: #141414;
+// }
+// #main-container {
+//   background: white;
+// }
 
-.navbar navbar-default {
-  background-color: #8fbe3e;
-}
+// .navbar-default {
+//   background: #8fbe3e;
+//   padding-right: 0;
+//   padding-left: 0;
+  
+// }
 
 
 
@@ -60,4 +63,10 @@ body {
 .dl-horizontal dd {
   margin-left: 0;
   margin-bottom: 0.5em;
+}
+
+/* table */
+
+td, th {
+  text-align: center;
 }

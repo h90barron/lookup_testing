@@ -19,9 +19,9 @@
       <td><%= f.name %></td>
       <td><%= f.oem %></td>
       <td><%= f.marketer %></td>
-      <td><%= f.pc_embedded %></td>
+      <td><img src="<%= f.pc_embedded ? asset_path('checkbox.png') :asset_path('x.png') %>" /></td>
       <td><%= f.embedded_platform %></td>
-      <td><%= f.pc_dependency %></td>
+      <td><img src="<%= f.pc_dependency ? asset_path('checkbox.png') : asset_path('x.png') %>" /></td>
     </tr>
     <% end %>
   </tbody>

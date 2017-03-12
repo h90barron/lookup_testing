@@ -32,6 +32,10 @@
 // }
 
 
+/* navbar */
+.navbar-header {
+  color: yellow;
+}
 
 /* search */
 
@@ -46,7 +50,7 @@
 }
 
 .search_filters {
-  #display: none;
+  display: none;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -69,4 +73,10 @@
 
 td, th {
   text-align: center;
+}
+
+/* pagination */
+#row-pagination {
+  text-align: center;
+  display: inline-block;
 }

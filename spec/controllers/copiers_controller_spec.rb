@@ -32,25 +32,25 @@ RSpec.describe CopiersController, type: :controller do
     end
     
     it "returns the correct search result for name search" do
-      @xerox = FactoryGirl.build :copier, { name: "Xerox", manufacturer: "Xerox" }
+      @xerox = FactoryGirl.build :copier, { name: "Xerox", oem: "Xerox" }
       @xerox.save
-      get :index, q: { name_or_manufacturer_cont: "xerox" }
+      get :index, q: { name_or_oem_cont: "xerox" }
       expect(assigns(:copier).first).to eql @xerox
     end
     
-    it "checks manufacturer if search param not in name" do
-      @canon = FactoryGirl.build :copier, { name: "SuperStar", manufacturer: "Canon" }
+    it "checks oem if search param not in name" do
+      @canon = FactoryGirl.build :copier, { name: "SuperStar", oem: "Canon" }
       @canon.save
-      get :index, q: { name_or_manufacturer_cont: "canon" }
+      get :index, q: { name_or_oem_cont: "canon" }
       expect(assigns(:copier).first).to eql @canon
     end
     
     it "returns correct number for queries with multiple results" do
       5.times do |i|
-        copier = FactoryGirl.build :copier, { name: "Toshiba" + i.to_s, manufacturer: "Toshiba" }
+        copier = FactoryGirl.build :copier, { name: "Toshiba" + i.to_s, oem: "Toshiba" }
         copier.save
       end
-      get :index, q: { name_or_manufacturer_cont: "Toshiba" }
+      get :index, q: { name_or_oem_cont: "Toshiba" }
       expect(assigns(:copier).count).to eql 5
     end
       
@@ -83,7 +83,7 @@ RSpec.describe CopiersController, type: :controller do
       
       it "should create new copier when params are correct" do
         create_session
-        post :create, copier: { name: "Xerox", manufacturer: "Xerox", papercut: true, coinop: true, card_reader: true }
+        post :create, copier: { name: "Xerox", oem: "Xerox", papercut: true, coinop: true, card_reader: true }
         expect(Copier.count).to eql 1
         copier = Copier.first
         expect(copier.name).to eql "Xerox"
@@ -91,16 +91,18 @@ RSpec.describe CopiersController, type: :controller do
       
       it "should not allow non-permitted params" do
         create_session
-        post :create, copier: { name: "Xerox bypass fake params", manufacturer: "Xerox", fake_params: "fake param" }
+        post :create, copier: { name: "Xerox bypass fake params", oem: "Xerox", fake_params: "fake param" }
         expect(Copier.count).to eql 1
         copier = Copier.first
         expect(copier.name).to eql "Xerox bypass fake params"
+        expect(copier.oem).to eql "Xerox"
+        expect(copier.has_attribute?(:fake_params)).to eql false
       end
       
       it "should not allow a duplicate copier to be created" do
         create_copier 
         create_session
-        post :create, copier: { name: "Factory Xerox", manufacturer: "Xerox" }
+        post :create, copier: { name: "Factory Xerox", oem: "Xerox" }
         expect(Copier.count).to eql 1
       end
       
@@ -118,9 +120,44 @@ RSpec.describe CopiersController, type: :controller do
   end
   
   describe "GET #edit" do
+    context "when admin is logged in" do
+      it "should respond with http status success" do
+        create_session
+        create_copier
+        @copier = Copier.first
+        get :edit, id: @copier.id
+        expect(response).to have_http_status(:success)
+      end
+      
+      it "should render the edit template" do
+        create_session
+        create_copier
+        @copier = Copier.first
+        get :edit, @copier.id
+        expect(response).to render_template(:edit)
+      end
+    end
+    
+    context "when admin is not logged in" do
+      it "should respond with 302 status code" do
+        get :edit
+        expect(response).to have_http_status(:redirect)
+      end
+    end
   end
   
-  describe "PUT #update" do
+  describe "PUT/PATCH #update" do
+    context "when admin is logged in" do
+      it "should update copier record" do
+        create_session
+        create_copier
+        @copier = Copier.first
+        patch :update, { id: @copier.id, copier: { name: "Updated name" } }
+        expect(@copier.name).to eql "Updated name"
+      end
+  end
+      
+      
   end
   
   describe "DELETE #destroy" do

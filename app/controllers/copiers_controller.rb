@@ -24,6 +24,7 @@ class CopiersController < ApplicationController
   def index
     @q = Copier.ransack(params[:q])
     @copier = @q.result
+    @copier = @copier.paginate(page: params[:page])
     log_search params[:q]
     
     #@search.build_condition
@@ -40,6 +41,7 @@ class CopiersController < ApplicationController
     @copier = Copier.find_by(id: params[:id])
     if @copier.update_attributes(copier_params)
       redirect_to @copier
+      #raise
       flash[:notice] = "Successfully updated!"
     else
       render 'edit'

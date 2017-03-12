@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'responders', '~> 2.0'
 gem 'ransack'
 gem 'populator'
+gem 'will_paginate', '~> 3.1.0'
 
 
 # Use ActiveModel has_secure_password

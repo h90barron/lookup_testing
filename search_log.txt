@@ -237,3 +237,75 @@
 {"name_or_oem_cont"=>"xerox"}
 {"name_or_oem_cont"=>"canon"}
 {"name_or_oem_cont"=>"Toshiba"}
+
+
+
+
+
+{"name_cont"=>"269", "oem_cont"=>""}
+
+
+{"name_cont"=>"269", "oem_cont"=>"Konica Minolta"}
+
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+{"name_or_oem_cont"=>"xerox"}
+{"name_or_oem_cont"=>"canon"}
+{"name_or_oem_cont"=>"Toshiba"}
+
+
+
+
+{"name_cont"=>"267", "oem_cont"=>""}
+{"name_cont"=>"267", "oem_cont"=>"HP"}
+{"name_cont"=>"267", "oem_cont"=>""}
+{"name_cont"=>"67 78", "oem_cont"=>""}
+{"name_cont"=>"27", "oem_cont"=>""}
+{"name_cont"=>"27", "oem_cont"=>"Xerox"}
+{"name_cont"=>"27", "pc_embedded_true"=>"1", "oem_cont"=>"Xerox"}
+{"name_cont"=>"", "pc_embedded_true"=>"1", "oem_cont"=>"Xerox"}
+
+
+
+{"name_cont"=>"test", "oem_cont"=>""}
+
+

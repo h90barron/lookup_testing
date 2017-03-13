@@ -124,23 +124,25 @@ RSpec.describe CopiersController, type: :controller do
       it "should respond with http status success" do
         create_session
         create_copier
-        @copier = Copier.first
-        get :edit, id: @copier.id
+        copier = Copier.first
+        get :edit, id: copier.id
         expect(response).to have_http_status(:success)
       end
       
       it "should render the edit template" do
         create_session
         create_copier
-        @copier = Copier.first
-        get :edit, @copier.id
+        copier = Copier.first
+        get :edit, id:  copier.id
         expect(response).to render_template(:edit)
       end
     end
     
     context "when admin is not logged in" do
       it "should respond with 302 status code" do
-        get :edit
+        create_copier
+        copier = Copier.first
+        get :edit, id: copier.id
         expect(response).to have_http_status(:redirect)
       end
     end
@@ -151,9 +153,10 @@ RSpec.describe CopiersController, type: :controller do
       it "should update copier record" do
         create_session
         create_copier
-        @copier = Copier.first
-        patch :update, { id: @copier.id, copier: { name: "Updated name" } }
-        expect(@copier.name).to eql "Updated name"
+        copier = Copier.first
+        patch :update, id: copier.id, copier: { name: "Updated name" } 
+        #expect(Copier.count).to eql 10
+        expect(Copier.first.name).to eql "Updated name"
       end
   end
       

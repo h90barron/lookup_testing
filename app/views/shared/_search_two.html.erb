@@ -1,10 +1,10 @@
 <form>
   <div class="form-group">
     <label for="search_copier">Copier Search</label>
-      <%= search_form_for @q, html: { class: "form-inline", id: "search_copier" } do |f| %>
+      <%= form_for :copier_search, html: { class: "form-inline", id: "search_copier" } do |f| %>
         <div class="row">
           <div class="col-sm-10">
-            <%= f.search_field :name_cont_all, placeholder: "Search...", class: "form-control" %>
+            <%= f.search_field :text_search, placeholder: "Search...", class: "form-control" %>
           </div>
           <div class="col-sm-2">
             <%= f.submit "Submit", class: "btn" %>
@@ -15,11 +15,11 @@
           <div class="field">
             <div class="col-sm-6">
               <%= f.label :supports_papercut_embedded_application %>
-              <%= f.check_box :pc_embedded_true, include_hidden: false %>
+              <%= f.check_box :pc_embedded, include_hidden: false %>
             </div>
             <div class="col-sm-6">
               <%= f.label :manufacturer %>
-              <%= f.collection_select :oem_cont, Oem.all, :name, :name, include_blank: "Select" %>
+              <%= f.collection_select :oem, Oem.all, :name, :name, include_blank: "Select" %>
             </div>
         </div>
       <% end %>
@@ -27,4 +27,3 @@
   </div>
   <button class="hidden_search">Filters</button>
 </form>
-

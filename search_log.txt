@@ -309,3 +309,19 @@
 {"name_cont"=>"test", "oem_cont"=>""}
 
 
+
+
+{"name_cont"=>"78", "oem_cont"=>""}
+{"name_cont"=>"78 67", "oem_cont"=>""}
+
+{"name_cont_all"=>"259", "oem_cont"=>""}
+{"name_cont_all"=>"z259", "oem_cont"=>""}
+
+
+
+
+
+
+{"name_cont_all"=>"fake", "oem_cont"=>""}
+
+{"name_cont_all"=>"314", "pc_embedded_true"=>"1", "oem_cont"=>""}

@@ -22,10 +22,40 @@ class CopiersController < ApplicationController
   end
   
   def index
-    @q = Copier.ransack(params[:q])
-    @copier = @q.result
+    # testing new search ######################
+    if params.has_key?(:copier_search)
+      #@copier = Copier.search(params[:copier_search])
+      @copier = basic_search(params[:copier_search])
+    else 
+      @copier = Copier.all
+    end
+    
     @copier = @copier.paginate(page: params[:page])
-    log_search params[:q]
+    ############################################
+    
+    # @q = Copier.ransack(params[:q])
+    # @copier = @q.result
+    # @copier = @copier.paginate(page: params[:page])
+    # log_search params[:q]
+    
+    
+    ##############ransack testing#############################
+    # if !(params[:q][:name_cont].empty?)
+    #   raise
+    #   params[:q][:combinator] = 'or'
+    #   params[:q][:groupings] = []
+    #   custom_words = params[:q][:name_cont]
+    #   # params = params[:q].delete :name_cont
+    #   custom_words.split(' ').each_with_index do |word, index|
+    #     params[:q][:groupings][index] = {name_cont: word}
+    #   end
+    # end
+    
+    
+    # @q = Copier.ransack(params[:q])
+    # @copier = @q.result
+    # @copier = @copier.paginate(page: params[:page])
+    #############################################################
     
     #@search.build_condition
     

@@ -15,6 +15,7 @@ gem 'responders', '~> 2.0'
 gem 'ransack'
 gem 'populator'
 gem 'will_paginate', '~> 3.1.0'
+gem 'faker'
 
 
 # Use ActiveModel has_secure_password
@@ -31,7 +32,6 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda-matchers'
-  gem 'faker'
   gem 'ffaker'
 
 end

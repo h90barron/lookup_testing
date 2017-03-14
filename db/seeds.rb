@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-require 'faker'
+# require 'faker'
 require 'populator'
 
 def r_bool
@@ -71,3 +71,5 @@ Copier.populate(1000) do |c|
   c.card_reader_types       = str_builder "card_reader_types", 5
   
 end
+
+User.create(name: "Hunter B", email: "h@h.com", password: "foobar", password_confirmation: "foobar" )

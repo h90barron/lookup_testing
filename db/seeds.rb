@@ -8,6 +8,19 @@
 # require 'faker'
 require 'populator'
 
+
+Oem.create(name: "Xerox")
+Oem.create(name: "Toshiba")
+Oem.create(name: "Lexmark")
+Oem.create(name: "Sharp")
+Oem.create(name: "Ricoh")
+Oem.create(name: "Dell")
+Oem.create(name: "Kyocera")
+Oem.create(name: "Konica Minolta")
+Oem.create(name: "Samsung")
+Oem.create(name: "Canon")
+
+
 def r_bool
   b = rand(0..1)
   if b == 0
@@ -46,6 +59,9 @@ end
 def str_builder(str, max)
   return str + rand(1..max).to_s
 end
+
+
+
 
 Copier.populate(1000) do |c|
   c.name                    = assign_name

@@ -22,7 +22,9 @@ class CopiersController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "file_name"
+        render :pdf => "file_name",
+               :template => "copiers/show.pdf.erb",
+               :layout => 'pdf'
       end
     end
   end

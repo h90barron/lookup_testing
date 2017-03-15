@@ -10,6 +10,9 @@
     <div class="container">
     <%= render partial: "shared/navbar" %>
     <div id="main-container" class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
       
       <%= yield %>
       <%= debug(params) %>

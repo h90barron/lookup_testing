@@ -19,6 +19,12 @@ class CopiersController < ApplicationController
   
   def show
     @copier = Copier.find_by(id: params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name"
+      end
+    end
   end
   
   def index

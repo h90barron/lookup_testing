@@ -1,0 +1,35 @@
+    <div class="container-general">
+      <div class="container-mid">
+      
+      <div class="container">
+    <%= render partial: "shared/navbar" %>
+    <div id="main-container" class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      
+      <%= yield %>
+      <%= debug(params) %>
+      </div>
+      </div>
+    </div>
+    </div>
+    
+    
+    
+    
+        <div id="header-container" class="container">
+      <div class="container" id="nav-container">
+        <%= render 'shared/navbar2' %>
+      </div>
+    </div>
+  
+  
+    <div id="main-container">
+      <div class="container" id="content-container">
+        <%= yield %>
+      </div>
+    </div>
+  
+    <div id="body-container">
+    </div>

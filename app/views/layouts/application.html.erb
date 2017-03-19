@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Lookup</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>Lookup</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
   <body>
-    <div class="container">
-    <%= render partial: "shared/navbar" %>
-    <div id="main-container" class="container">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-      
+    <div class="container" id="top-container">
+      <%= render 'shared/navbar2' %>
+      </div>
+    <div class="container" id="bottom-container">
       <%= yield %>
-      <%= debug(params) %>
     </div>
+    <div class="container" id="footer-container">
+      <%= render 'shared/footer' %>
+    </div>
+
+    
   </body>
 </html>

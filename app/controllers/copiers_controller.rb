@@ -36,7 +36,7 @@ class CopiersController < ApplicationController
       @search_text = params[:copier_search][:text_search]
     else 
       @copier = Copier.all
-      @search_text = "Search"
+      @search_text = ""
     end
     
     @copier = @copier.paginate(page: params[:page])

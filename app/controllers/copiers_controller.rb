@@ -1,6 +1,7 @@
 class CopiersController < ApplicationController
   respond_to :json
   before_action :logged_in_admin, only: [:new, :create, :edit, :destroy]
+  #before_action :check_for_mobile, only: [:show]
   
   def new
     @copier = Copier.new

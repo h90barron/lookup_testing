@@ -51,6 +51,7 @@
 
 body {
   background-image: url(bg2.jpg);
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -75,16 +76,36 @@ ul.nav {
   padding-top: 2%;
   padding-bottom: 2%;
 }
+
 ul.nav li a {
-  color: yellow;
+  color: #6b6b6b;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
   // text-align: center;
   
 }
 
-// .navbar-header img {
-//   height: 10%;
-//   width: 10%;
-// }
+#nav-container {
+  padding-left: 0;
+  padding-right: 0;
+  height: 100%;
+}
+
+.navbar-default {
+  height: 100%;
+  background-color: black;
+  color: yellow;
+  border-color: black;
+}
+
+#navbar-collapse-1 {
+  height: 100%;
+}
+
+.navbar-default img {
+  height: 15%;
+  width: 20%;
+}
 
 
 /* search */
@@ -125,6 +146,7 @@ form#search {
 
 td, th {
   text-align: center;
+  padding: 5px;
 }
 
 .table td:hover {
@@ -137,73 +159,6 @@ td, th {
   display: inline-block;
 }
 
-
-
-
-
-
-#header-container {
-  background-color: black;
-  height: 100px;
-  width: 100%;
-  margin: 0;
-}
-
-
-
-#nav-container {
-  padding-left: 0;
-  padding-right: 0;
-  height: 100%;
-}
-
-.navbar-default {
-  height: 100%;
-  background-color: black;
-  color: yellow;
-  border-color: black;
-}
-
-#navbar-collapse-1 {
-  height: 100%;
-}
-
-.navbar-default img {
-  height: 15%;
-  width: 20%;
-}
-
-
-
-/* next tests */
-
-.main-container {
-  height: 100%;
-}
-
-#top-row {
-  background-color: black;
-  height: 100px;
-  width: 100%;
-  margin: 0;
-}
-
-#middle-row {
-  background-image: url(topbargray_background.jpg);
-  height: 25%;
-  max-height: 250px;
-  width: 100%;
-  margin: 0;
-}
-
-#bottom-row {
-  background-image: url(bg2.jpg);
-  height: 50%;
-  max-height: 400px;
-  width: 100%;
-  margin: 0;
-  
-}
 
 
 /*****************************************************************/
@@ -221,12 +176,11 @@ td, th {
   background: black;
 }
 
+/* footer */
+
 #footer-container {
   background: white;
 }
-
-
-/* footer */
 
 footer {
   margin-top: 45px;
@@ -256,3 +210,7 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
+
+
+/* links and buttons */
+

@@ -103,8 +103,12 @@ ul.nav li a {
 }
 
 .navbar-default img {
-  height: 15%;
-  width: 20%;
+  max-height: 15%;
+  max-width: 20%;
+}
+
+span.icon-bar {
+  background-color: white;
 }
 
 
@@ -122,9 +126,18 @@ form#search {
 }
 
 .search_filters {
-  display: none;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  // display: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#search-intro-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.hidden_search {
+  padding-bottom: 15px;
 }
 
 

@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   post    '/login',     to: "sessions#create"
   delete  '/logout',    to: "sessions#destroy"
   post    '/copier_requests/:id',    to: "copier_requests#accept"
+  
+  get     '/imports',        to: "imports#new"
+  post    '/imports',        to: "imports#create"
+  
   #using post above since post method to that route is not being used
   
   resources :copier_requests

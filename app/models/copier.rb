@@ -29,4 +29,12 @@ class Copier < ActiveRecord::Base
       return result.order(name: "desc")
       #where("manufacturer LIKE ?", "%#{search}%")
   end
+  
+  
+  def self.import(file)
+      CSV.foreach(file.path, headers: true) do |row|
+        Copier.create! row.to_hash
+      end
+  end
+  
 end

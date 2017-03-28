@@ -10,10 +10,17 @@
   <body>
     <div class="container" id="top-container">
       <%= render 'shared/navbar2' %>
-      </div>
-    <div class="container" id="bottom-container">
-      <%= yield %>
     </div>
+    
+
+    
+    <div class="container" id="bottom-container">
+      <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+      <% end %>
+        <%= yield %>
+    </div>
+    
     <div class="container" id="footer-container">
       <%= render 'shared/footer' %>
     </div>

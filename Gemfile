@@ -18,6 +18,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'faker'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'roo'
 
 
 

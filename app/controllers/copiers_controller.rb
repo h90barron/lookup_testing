@@ -98,12 +98,20 @@ class CopiersController < ApplicationController
   
   private
   
+    # def copier_params
+    #   params.require(:copier).permit(:name, :oem, :marketer, :pc_embedded, :embedded_platform,
+    #                 :pc_int_scanning, :pc_dependency, :pc_dependency_detail, :general_notes, 
+    #                 :aka, :intro_date, :disc_date, :print, :scan, :copy, :fax, :card_reader_support,
+    #                 :vending_connector, :vending_connector_oem, :vending_connector_ex, :vending_connector_cpad,
+    #                 :card_reader_mode, :card_reader_types)
+    # end
+    
+    
     def copier_params
-      params.require(:copier).permit(:name, :oem, :marketer, :pc_embedded, :embedded_platform,
-                     :pc_int_scanning, :pc_dependency, :pc_dependency_detail, :general_notes, 
-                     :aka, :intro_date, :disc_date, :print, :scan, :copy, :fax, :card_reader_support,
-                     :vending_connector, :vending_connector_oem, :vending_connector_ex, :vending_connector_cpad,
-                     :card_reader_mode, :card_reader_types)
+      params.require(:copier).permit(:name, :oem, :marketer, :embedded_platform, :general_notes, :aka, :intro_date, :disc_date,
+                     :print, :copy, :scan, :fax, :card_reader_support, :oem_vending_harness_01, :old_db_id, :acdi_vending_harness_01,
+                     :pcb_details_01, :acdi_vending_harness_02, :oem_vending_harness_02, :pcb_details_02, :name_details, :model_type, :manufacturing_status,
+                     :print_speed, :supported_name, :supported_notes_01, :supported_notes_02, :supported_status)
     end
     
     # def logged_in_admin

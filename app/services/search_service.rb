@@ -23,7 +23,7 @@ module SearchService
   
   def add_search_filters(result, search)
     result = result.where("oem LIKE ?", "%#{search[:oem]}%") if search[:oem].present?
-    result = result.where(pc_embedded: search[:pc_embedded]) if search[:pc_embedded].present?
+    # result = result.where(pc_embedded: search[:pc_embedded]) if search[:pc_embedded].present?
     return result
   end
   

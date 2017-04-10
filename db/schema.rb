@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308215043) do
+ActiveRecord::Schema.define(version: 20170410195207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,14 +48,10 @@ ActiveRecord::Schema.define(version: 20170308215043) do
   end
 
   create_table "copiers", force: :cascade do |t|
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "marketer"
-    t.boolean  "pc_embedded"
     t.string   "embedded_platform"
-    t.boolean  "pc_int_scanning"
-    t.boolean  "pc_dependency"
-    t.string   "pc_dependency_detail"
     t.string   "general_notes"
     t.string   "aka"
     t.datetime "intro_date"
@@ -67,12 +63,22 @@ ActiveRecord::Schema.define(version: 20170308215043) do
     t.string   "name"
     t.string   "oem"
     t.boolean  "card_reader_support"
-    t.boolean  "vending_connector"
-    t.string   "vending_connector_oem"
-    t.string   "vending_connector_ex"
-    t.string   "vending_connector_cpad"
-    t.string   "card_reader_mode"
-    t.string   "card_reader_types"
+    t.string   "oem_vending_harness_01"
+    t.string   "old_db_id"
+    t.string   "acdi_vending_harness_01"
+    t.text     "pcb_details_01"
+    t.string   "acdi_vending_harness_02"
+    t.string   "oem_vending_harness_02"
+    t.text     "pcb_details_02"
+    t.string   "name_details"
+    t.string   "model_type"
+    t.string   "manufacturing_status"
+    t.string   "print_speed"
+    t.string   "supported_name"
+    t.string   "supported_notes_01"
+    t.string   "supported_notes_02"
+    t.string   "manufacturer"
+    t.string   "supported_status"
   end
 
   create_table "oems", force: :cascade do |t|

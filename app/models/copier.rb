@@ -1,5 +1,6 @@
 class Copier < ActiveRecord::Base
-  validates :name, uniqueness: true
+  # validates :name, uniqueness: true
+  
   
   
   # def self.sort_copier_count
@@ -32,7 +33,7 @@ class Copier < ActiveRecord::Base
   
   
   def self.import(file)
-      CSV.foreach(file.path, headers: true) do |row|
+      CSV.foreach(file.path, headers: true, encoding:'iso-8859-1:utf-8') do |row|
         Copier.create! row.to_hash
       end
   end

@@ -17,8 +17,6 @@
       <th>Manufacturer</th>
       <th>Marketer</th>
       <th>Supports Papercut</th>
-      <th>Embedded Platform</th>
-      <th>Dependencies</th>
     </tr>
   </thead>
   <tbody>
@@ -27,9 +25,7 @@
       <td><%= f.name %></td>
       <td><%= f.oem %></td>
       <td><%= f.marketer %></td>
-      <td><img src="<%= f.pc_embedded ? asset_path('checkbox.png') :asset_path('x.png') %>" /></td>
-      <td><%= f.embedded_platform %></td>
-      <td><img src="<%= f.pc_dependency ? asset_path('checkbox.png') : asset_path('x.png') %>" /></td>
+      <td><%= f.supported_status %></td>
     </tr>
     <% end %>
   </tbody>

@@ -12,4 +12,11 @@ class ImportsController < ApplicationController
 
     render 'new'
   end
+  
+  def export
+    @copiers = Copier.all
+    respond_to do |format|
+      format.csv { send_data @copiers.export, :filename => "CoperList.csv" }
+    end
+  end
 end

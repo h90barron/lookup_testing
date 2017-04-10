@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   get     '/imports',        to: "imports#new"
   post    '/imports',        to: "imports#create"
+  get     '/imports/export', to: "imports#export", defaults: { format: 'csv' }
   
   #using post above since post method to that route is not being used
   

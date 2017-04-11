@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   #using post above since post method to that route is not being used
   
   resources :copier_requests
+  resources :oems
 
   resources :copiers
   

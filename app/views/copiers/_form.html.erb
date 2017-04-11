@@ -1,123 +1,160 @@
 <%= form_for @copier do |f| %>
 
+  
   <div class="form-group">
-    <%= f.text_field :name, placeholder: "Copier Name", class: "form-control" %>
+    <p>
+      <%= f.label :model %>
+      <%= f.text_field :name, placeholder: "Copier Name", class: "form-control" %>
+    </p>
   </div>
   
   <div class="form-group">
-    <%= f.label :manufacturer %>
-    <%= f.collection_select :oem, Oem.all, :name, :name, prompt: true %>
+    <p>
+      <%= f.label :manufacturer %>
+      <%= f.collection_select :oem, Oem.all, :name, :name, prompt: true %>
+    </p>
   </div>
   
   <div class="form-group">
-    <%= f.label :marketer %>
-    <%= f.collection_select :marketer, Oem.all, :name, :name, prompt: true %>
+    <p>
+      <%= f.label :marketer %>
+      <%= f.collection_select :marketer, Oem.all, :name, :name, prompt: true %>
+    </p>
   </div>
-  
-  <p></p>
+
   
   
   <div class="form-group">
     <div class="field">
-      <%= f.label :supported_status %>
-      <%= f.select :supported_status, options_for_select(["Supported", "Not Supported", "Not available"]), prompt: true %>
+      <p>
+        <%= f.label :supported_status %>
+        <%= f.select :supported_status, options_for_select(["Supported", "Not Supported", "Unknown"]), prompt: true %>
+      </p>
     </div>
     <div class="field">
+      <%= f.label :supported_notes %>
       <%= f.text_field :supported_notes_01, placeholder: "Notes on supported status", class: "form-control" %>
     </div>
     <div class="field">
+      <%= f.label :additional_supported_notes %>
       <%= f.text_field :supported_notes_02, placeholder: "Notes on supported status (additional)", class: "form-control" %>
     </div>
   </div>
   
-  <p></p>
+  <hr>
   
   <div class="form-group">
     <div class="field">
-      <%= f.label :acdi_vending_harness %>
-      <%= f.collection_select :acdi_vending_harness_01, Oem.all, :name, :name, prompt: true %>
+      <p>
+        <%= f.label :acdi_vending_harness %>
+        <%= f.collection_select :acdi_vending_harness_01, Oem.all, :name, :name, prompt: true %>
+      </p>
     </div>
     
     <div class="field">
-      <%= f.label :oem_vending_harness %>
-      <%= f.collection_select :oem_vending_harness_01, Oem.all, :name, :name, prompt: true %>
+      <p>
+        <%= f.label :oem_vending_harness %>
+        <%= f.collection_select :oem_vending_harness_01, Oem.all, :name, :name, prompt: true %>
+      </p>
     </div>
     
     <div class="field">
+      <%= f.label :connector_details %>
       <%= f.text_field :pcb_details_01, placeholder: "Details for connector", class: "form-control" %>
     </div>
   </div>
   
-  <p></p>
+  <hr>
   
   <div class="form-group">
     <div class="field">
-      <%= f.label :acdi_vending_harness %>
-      <%= f.collection_select :acdi_vending_harness_02, Oem.all, :name, :name, prompt: true %>
+      <p>
+        <%= f.label :secondary_acdi_vending_harness %>
+        <%= f.collection_select :acdi_vending_harness_02, Oem.all, :name, :name, prompt: true %>
+      </p>
     </div>
     
     <div class="field">
-      <%= f.label :oem_vending_harness %>
-      <%= f.collection_select :oem_vending_harness_02, Oem.all, :name, :name, prompt: true %>
+      <p>
+        <%= f.label :secondary_oem_vending_harness %>
+        <%= f.collection_select :oem_vending_harness_02, Oem.all, :name, :name, prompt: true %>
+      </p>
     </div>
     
     <div class="field">
+      <%= f.label :secondary_connector_details %>
       <%= f.text_field :pcb_details_02, placeholder: "Details for connector", class: "form-control" %>
     </div>
   </div>
   
-  <p></p>
+
+  <hr>
   
   <div class="form-group">
     <div class="field">
+      <%= f.label :general_notes %>
       <%= f.text_field :general_notes, placeholder: "General notes", class: "form-control" %>
     </diV>
   </div>
   
-  <p></p>
   
   <div class="form-group">
     <div class="field">
+      <%= f.label :also_know_as %>
       <%= f.text_field :aka, placeholder: "Also sold as", class: "form-control" %>
     </div>
   </div>
   
-  <p></p>
+  
+  <hr>
   
   <div class="form-group">
     <div class="field">
-      <%= f.label :introduction_date %>
-      <%= f.datetime_select :intro_date, prompt: true %>
+      <p>
+        <%= f.label :introduction_date %>
+        <%= f.datetime_select :intro_date, prompt: true, discard_hour: true %>
+      </p>
     </div>
     <div class="field">
-      <%= f.label :discontinued_date %>
-      <%= f.datetime_select :disc_date, prompt: true %>
+      <p>
+        <%= f.label :discontinued_date %>
+        <%= f.datetime_select :disc_date, prompt: true, discard_hour: true %>
+      </p>
     </div>
   </div>
   
-  <p></p>
+  <hr>
   
   <div class="form-group">
     <div class="field">
-      <%= f.label :supports_printing %>
-      <%= f.check_box :print %>
+      <p>
+        <%= f.label :supports_printing %>
+        <%= f.check_box :print %>
+      </p>
     </div>
     <div class="field">
-      <%= f.label :supports_copying %>
-      <%= f.check_box :copy %>
+      <p>
+        <%= f.label :supports_copying %>
+        <%= f.check_box :copy %>
+      </p>
     </div>
     <div class="field">
-      <%= f.label :supports_scanning %>
-      <%= f.check_box :scan %>
+      <p>
+        <%= f.label :supports_scan %>
+        <%= f.check_box :scan %>
+      </p>
     </div>
     <div class="field">
-      <%= f.label :supports_faxing %>
-      <%= f.check_box :fax %>
+      <p>
+        <%= f.label :supports_fax %>
+        <%= f.check_box :fax %>
+      </p>
     </div>
   </div>
   
   <div class="form-group">
     <div class="field">
+      <%= f.label :card_reader_support %>
       <%= f.text_field :card_reader_support, placeholder: "Card reader support", class: "form-control" %>
     </div>
   </div>
@@ -125,6 +162,7 @@
   
   <div class="form-group">
     <div class="field">
+      <%= f.label :embedded_platform %>
       <%= f.text_field :embedded_platform, placeholder: "Embedded platform", class: "form-control" %>
     </div>
   </div>

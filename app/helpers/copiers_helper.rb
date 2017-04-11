@@ -7,4 +7,5 @@ module CopiersHelper
     rescue
     end
   end
+  
 end

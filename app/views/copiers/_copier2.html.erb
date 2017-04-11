@@ -4,7 +4,12 @@
     <div class="col-md-6">
       <dl class="dl-horizontal">
         <dt>Model:</dt>
-        <dd><%= @copier.name %></dd>
+        <% if !(@copier.name.nil?) %>
+          <dd><%= @copier.name %></dd>
+        <% else %>
+          <dd><%= @copier.supported_name %></dd>
+        <% end %>
+          
         
         <dt>Manufacturer: </dt>
         <dd><%= @copier.oem %></dd>

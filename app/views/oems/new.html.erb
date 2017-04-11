@@ -1,0 +1,12 @@
+<h3>Add a manufacturer</h3>
+
+<%= render 'form' %>
+
+
+<h4>Current Manufacturers</h4>
+<ul>
+  <% Oem.all.each do |oem| %>
+  <li><%= oem.name %></li>
+  <% end %>
+</ul>
+

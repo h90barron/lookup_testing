@@ -94,11 +94,11 @@
   <div class="form-group">
     <div class="field">
       <%= f.label :introduction_date %>
-      <%= f.datetime_select :req_intro_date, prompt: true %>
+      <%= f.datetime_select :req_intro_date, prompt: true, discard_hour: true %>
     </div>
     <div class="field">
       <%= f.label :discontinued_date %>
-      <%= f.datetime_select :req_disc_date, prompt: true %>
+      <%= f.datetime_select :req_disc_date, prompt: true, discard_hour: true %>
     </div>
   </div>
   

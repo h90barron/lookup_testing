@@ -2,7 +2,11 @@ class CopierRequestsController < ApplicationController
   before_action :logged_in_admin, only: [:index, :delete]
   
   def new
-    @request = CopierRequest.new
+    if (params[:copier_id].present?)
+        @request = create_request_from_copier(Copier.find_by(id: params[:copier_id]))
+        
+      end
+    #@request = CopierRequest.new
   end
   
   def create

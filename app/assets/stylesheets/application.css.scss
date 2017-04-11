@@ -230,8 +230,22 @@ footer ul li {
 
 /* general */
 
+#oem_table tr {
+  border: 0;
+}
+
 .inner{
   background: aliceblue;
   border: 1px solid blue;
   margin: 10px 0;
 }
+
+.form-group p label {
+  display: block;
+  float: left; 
+  width: 130px;
+}
+
+.form-group .field {
+  padding: 5px;
+} 

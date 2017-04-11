@@ -16,6 +16,7 @@
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <%= image_tag("PartnerPortalACDI_Logo_White.png") %>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Search', copiers_path %></li>
         <% if admin_logged_in? %>
           <li><%= link_to 'Add new', new_copier_path %></li>
         <% else %>

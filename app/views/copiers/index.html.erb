@@ -22,7 +22,13 @@
   <tbody>
     <%= div_for @copier do |f| %>
     <tr data-link="<%= copier_path(f) %>">
-      <td><%= f.name %></td>
+      <% if !(f.name.nil?) %>
+        <td><%= f.name %></td>
+      <% elsif !(f.name_details.nil?) %>
+        <td><%= f.name_details %></td>
+      <% else %>
+        <td><%= f.supported_name %></td>
+      <% end %>
       <td><%= f.oem %></td>
       <td><%= f.marketer %></td>
       <td><%= f.supported_status %></td>

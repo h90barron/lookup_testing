@@ -15,75 +15,10 @@
 
   <p></p>
 
-<div class="container">
-  
-  <dl class="dl-horizontal">
-    <dt>Model:             </dt>
-    <dd><%= @copier.name %></dd>
-  
-    <dt>Manufacturer: </dt>
-    <dd><%= @copier.oem %></dd>
-  
-    <dt>Marketer: </dt>
-    <dd><%= @copier.marketer %></dd>
-  
-    <dt>Supports Papercut embeded appplication: </dt>
-    <dd><%= @copier.supported_status %></dd>
-  
-    <dt>Embedded Platform: </dt>
-    <dd><%= @copier.embedded_platform %></dd>
-    
-    <dt>General Notes: </dt>
-    <dd><%= @copier.general_notes %></dd>
-  
-    <dt>General notes: </dt>
-    <dd><%= @copier.general_notes %></dd>
-  
-    <dt>Also sold as: </dt>
-    <dd><%= @copier.aka %></dd>
-  
-    <dt>Introduction date: </dt>
-    <dd><%= @copier.intro_date.to_s %></dd>
-  
-    <dt>Discontinued date: </dt>
-    <dd><%= @copier.disc_date.to_s %></dd>
-    
-    <dt>Card reader support: </dt>
-    <dd><%= @copier.card_reader_support %></dd>
-    
-    <dt>ACDI connector harness (option 1): </dt>
-    <dd><%= @copier.acdi_vending_harness_01 %></dd>
-    
-    <dt>OEM connecting harness (option 1): </dt>
-    <dd><%= @copier.oem_vending_harness_02 %></dd>
-    
-    <dt>Connector detils (option 1): </dt>
-    <dd><%= @copier.pcb_details_01 %></dd>
-    
-    
-    <dt>ACDI connector harness (option 2): </dt>
-    <dd><%= @copier.acdi_vending_harness_02 %></dd>
-    
-    <dt>OEM connecting harness (option 2): </dt>
-    <dd><%= @copier.oem_vending_harness_02 %></dd>
-    
-    <dt>Connector detils (option 2): </dt>
-    <dd><%= @copier.pcb_details_02 %></dd>
-    
-    <dt>Card Reader Support: </dt>
-    <dd><%= @copier.card_reader_support %></dd>
-    
-    <dt>Supported Status: </dt>
-    <dd><%= @copier.supported_status %></dd>
-    
-    <dt>Supported Notes: </dt>
-    <dd><%= @copier.supported_notes_01 %></dd>
-    
-    <dt>Supported Notes (additional): </dt>
-    <dd><%= @copier.supported_notes_02 %></dd>  
-  
-  </dl>
-</div>
+<!--<div class="container">-->
+  <%= render 'copier2' %>
+
+<!--</div>-->
 
 
 

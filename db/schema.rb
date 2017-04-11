@@ -11,25 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410195207) do
+ActiveRecord::Schema.define(version: 20170410213335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "copier_requests", force: :cascade do |t|
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "req_name"
     t.string   "user_name"
     t.string   "user_phone"
     t.string   "user_email"
     t.string   "req_oem"
     t.string   "req_marketer"
-    t.boolean  "req_pc_embedded"
     t.string   "req_embedded_platform"
-    t.boolean  "req_pc_int_scanning"
-    t.boolean  "req_pc_dependency"
-    t.string   "req_pc_dependency_detail"
     t.string   "req_general_notes"
     t.string   "req_aka"
     t.datetime "req_intro_date"
@@ -39,12 +35,21 @@ ActiveRecord::Schema.define(version: 20170410195207) do
     t.boolean  "req_scan"
     t.boolean  "req_fax"
     t.boolean  "req_card_reader_support"
-    t.boolean  "req_vending_connector"
-    t.string   "req_vending_connector_oem"
-    t.string   "req_vending_connector_ex"
-    t.string   "req_vending_connector_cpad"
-    t.string   "req_card_reader_mode"
-    t.string   "req_card_reader_types"
+    t.string   "req_oem_vending_harness_01"
+    t.string   "req_acdi_vending_harness_01"
+    t.text     "req_pcb_details_01"
+    t.string   "req_acdi_vending_harness_02"
+    t.string   "req_oem_vending_harness_02"
+    t.text     "req_pcb_details_02"
+    t.string   "req_name_details"
+    t.string   "req_model_type"
+    t.string   "req_manufacturing_status"
+    t.string   "req_print_speed"
+    t.string   "req_supported_name"
+    t.string   "req_supported_notes_01"
+    t.string   "req_supported_notes_02"
+    t.string   "req_manufacturer"
+    t.string   "req_supported_status"
   end
 
   create_table "copiers", force: :cascade do |t|

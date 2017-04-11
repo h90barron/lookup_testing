@@ -24,22 +24,16 @@
   <p></p>
   
   
-  <div class="form-group">
+   <div class="form-group">
     <div class="field">
-      <%= f.label :supports_papercut_embed %>
-      <%= f.check_box :req_pc_embedded %>
+      <%= f.label :supported_status %>
+      <%= f.select :req_supported_status, options_for_select(["Supported", "Not Supported", "Not available"]), prompt: true %>
     </div>
     <div class="field">
-      <%= f.text_field :req_embedded_platform, placeholder: "Embedded Platform", class: "form-control" %>
+      <%= f.text_field :req_supported_notes_01, placeholder: "Notes on supported status", class: "form-control" %>
     </div>
-  </div>
-  
-  <p></p>
-  
-  <div class="form-group">
     <div class="field">
-      <%= f.label :supports_papercut_integrated_scanning %>
-      <%= f.check_box :req_pc_int_scanning %>
+      <%= f.text_field :req_supported_notes_02, placeholder: "Notes on supported status (additional)", class: "form-control" %>
     </div>
   </div>
   
@@ -47,11 +41,35 @@
   
   <div class="form-group">
     <div class="field">
-      <%= f.label :papercut_dependencies %>
-      <%= f.check_box :req_pc_dependency %>
+      <%= f.label :acdi_vending_harness %>
+      <%= f.collection_select :req_acdi_vending_harness_01, Oem.all, :name, :name, prompt: true %>
     </div>
+    
     <div class="field">
-      <%= f.text_field :req_pc_dependency_detail, placeholder: "Dependency details", class: "form-control" %>
+      <%= f.label :oem_vending_harness %>
+      <%= f.collection_select :req_oem_vending_harness_01, Oem.all, :name, :name, prompt: true %>
+    </div>
+    
+    <div class="field">
+      <%= f.text_field :req_pcb_details_01, placeholder: "Details for connector", class: "form-control" %>
+    </div>
+  </div>
+  
+  <p></p>
+  
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :acdi_vending_harness %>
+      <%= f.collection_select :req_acdi_vending_harness_02, Oem.all, :name, :name, prompt: true %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :oem_vending_harness %>
+      <%= f.collection_select :req_oem_vending_harness_02, Oem.all, :name, :name, prompt: true %>
+    </div>
+    
+    <div class="field">
+      <%= f.text_field :req_pcb_details_02, placeholder: "Details for connector", class: "form-control" %>
     </div>
   </div>
   
@@ -76,11 +94,11 @@
   <div class="form-group">
     <div class="field">
       <%= f.label :introduction_date %>
-      <%= f.datetime_select :req_intro_date %>
+      <%= f.datetime_select :req_intro_date, prompt: true %>
     </div>
     <div class="field">
       <%= f.label :discontinued_date %>
-      <%= f.datetime_select :req_disc_date %>
+      <%= f.datetime_select :req_disc_date, prompt: true %>
     </div>
   </div>
   
@@ -105,37 +123,16 @@
     </div>
   </div>
   
-  <h3>Cards and Hardware</h3>
+  <div class="form-group">
+    <div class="field">
+      <%= f.text_field :req_card_reader_support, placeholder: "Card reader support", class: "form-control" %>
+    </div>
+  </div>
+  
   
   <div class="form-group">
     <div class="field">
-      <%= f.label :card_reader_support %>
-      <%= f.check_box :req_card_reader_support %>
-    </div>
-    <div class="field">
-      <%= f.label :vending_connector %>
-      <%= f.check_box :req_vending_connector %>
-    </div>
-    
-    <div class="field">
-      <%= f.label :vending_connector_manufacturer %>
-      <%= f.select :req_vending_connector_oem, options_for_select(["vc_oem_1", "vc_oem_2"]), prompt: true  %>
-    </div>
-    <div class="field">
-      <%= f.label :vending_connector_ex %>
-      <%= f.select :req_vending_connector_ex, options_for_select(["vc_ex_1", "vc_ex_2"]), prompt: true %>
-    </div>
-    <div class="field">
-      <%= f.label :vending_connector_cpad %>
-      <%= f.select :req_vending_connector_cpad, options_for_select(["vc_cpad_1", "vc_cpad_2"]), prompt: true %>
-    </div>
-    <div class="field">
-      <%= f.label :card_reader_mode %>
-      <%= f.select :req_card_reader_mode, options_for_select(["card_reader_mode_1", "card_reader_mode_2"]), prompt: true %>
-    </div>
-    <div class="field">
-      <%= f.label :card_reader_type %>
-      <%= f.select :req_card_reader_types, options_for_select(["card_reader_type_1", "card_reader_type_2"]), prompt: true %>
+      <%= f.text_field :req_embedded_platform, placeholder: "Embedded platform", class: "form-control" %>
     </div>
   </div>
   

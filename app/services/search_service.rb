@@ -2,14 +2,48 @@ module SearchService
   def basic_search(search)
     if search[:text_search].present?
       search_words = search[:text_search].split(' ')
-    
-      result = Copier.where("name LIKE ?", "%#{search_words[0]}%")
-      if search_words.length > 1
-        for word in 1..(search_words.length - 1) do
-          result = result.where("name LIKE ?", "%#{search_words[word]}%")
+      
+      
+      
+      # split non_numeric words into array and find numeric for name search
+      non_numeric_words = []
+      for word in search_words do
+        if !(word =~ /\d/)
+          non_numeric_words.append(word)
+        else
+          numeric_word = word
         end
       end
+      
+      
+      # check if non_numerics match a manufacturer
+      for word in non_numeric_words do
+        manu = Oem.where("lower(name) LIKE ?", ("%#{word}%").downcase)
+        if !(manu.nil?)
+          #result = result.where("lower(oem) LIKE ?", ("%#{word}%").downcase)
+          manu = word
+          break
+        end
+      end
+      
+      result = Copier.where("lower(name) LIKE ?", ("%#{numeric_word}%").downcase)
+    
+      # result = Copier.where("lower(name) LIKE ?", ("%#{search_words[0]}%").downcase)
+      # if search_words.length > 1
+      #   for word in 1..(search_words.length - 1) do
+      #     result = result.where("lower(name) LIKE ?", ("%#{search_words[word]}%").downcase)
+      #   end
+      # end
     end
+    
+    
+    # if manu is set filter by manufacturer
+    if manu
+      result = result.where("lower(oem) LIKE ? ", ("%#{manu}%").downcase)
+    end
+
+ 
+  
     
     if result.nil?
       result = Copier.all

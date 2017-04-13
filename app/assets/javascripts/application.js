@@ -30,3 +30,10 @@ $(document).on('turbolinks:load', function(){
     });
 });
 
+
+
+$(document).on('turbolinks:load', function(){
+    $("#hidden_details").click(function(){
+        $(".copier_details").toggle(250);
+    });
+});

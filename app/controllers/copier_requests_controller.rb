@@ -3,10 +3,10 @@ class CopierRequestsController < ApplicationController
   
   def new
     if (params[:copier_id].present?)
-        @request = create_request_from_copier(Copier.find_by(id: params[:copier_id]))
-        
-      end
-    #@request = CopierRequest.new
+      @request = create_request_from_copier(Copier.find_by(id: params[:copier_id]))
+    else
+      @request = CopierRequest.new
+    end
   end
   
   def create
@@ -25,6 +25,10 @@ class CopierRequestsController < ApplicationController
   
   def show
     @request = CopierRequest.find_by(id: params[:id])
+    if !(@request.copr_id.nil?)
+      @copier = Copier.find_by(id: @request.copr_id)
+    end
+      
   end
   
   def edit
@@ -72,6 +76,6 @@ class CopierRequestsController < ApplicationController
     params.require(:copier_request).permit(:user_name, :user_phone, :req_name, :req_oem, :req_marketer, :req_embedded_platform, :req_general_notes, :req_aka, :req_intro_date, :req_disc_date,
                      :req_print, :req_copy, :req_scan, :req_fax, :req_card_reader_support, :req_oem_vending_harness_01, :req_acdi_vending_harness_01,
                      :req_pcb_details_01, :req_acdi_vending_harness_02, :req_oem_vending_harness_02, :req_pcb_details_02, :req_name_details, :req_model_type, :req_manufacturing_status,
-                     :req_print_speed, :req_supported_name, :req_supported_notes_01, :req_supported_notes_02, :req_supported_status)
+                     :req_print_speed, :req_supported_name, :req_supported_notes_01, :req_supported_notes_02, :req_supported_status, :copr_id)
   end
 end

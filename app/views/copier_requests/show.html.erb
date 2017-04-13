@@ -38,9 +38,6 @@
     <dt>General Notes: </dt>
     <dd><%= @request.req_general_notes %></dd>
   
-    <dt>General notes: </dt>
-    <dd><%= @request.req_general_notes %></dd>
-  
     <dt>Also sold as: </dt>
     <dd><%= @request.req_aka %></dd>
   
@@ -84,6 +81,15 @@
     <dt>Supported Notes (additional): </dt>
     <dd><%= @request.req_supported_notes_02 %></dd>  
     
+    <dt>Copier id:</dt>
+    <dd><%= @request.copr_id %></dd>
   </dl>
+  
+  <% if (!@request.copr_id.nil?) %>
+    <dl class="dl-horizontal">
+      <dt>Request type: </dt>
+      <dd>Editing copier that already exists</dd>
+    </dl>
+  <% end %>
 </div>
 

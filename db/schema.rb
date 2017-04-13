@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410213335) do
+ActiveRecord::Schema.define(version: 20170412214731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170410213335) do
     t.string   "req_supported_notes_02"
     t.string   "req_manufacturer"
     t.string   "req_supported_status"
+    t.string   "copr_id"
   end
 
   create_table "copiers", force: :cascade do |t|

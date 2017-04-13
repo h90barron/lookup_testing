@@ -4,16 +4,15 @@ class OemsController < ApplicationController
   
   def new
     @oem = Oem.new
-    @oems = Oem.all
   end
   
   def create
     @oem = Oem.new oem_params
     if @oem.save
-      flash[:notice] = "Copier successfully created!"
+      flash[:notice] = "Manufacturer successfully created!"
       render 'new'
     else
-      flash[:notice] = "Copier not successfully created"
+      flash[:notice] = "Manufacturer not successfully added"
       render 'new' 
     end
   end

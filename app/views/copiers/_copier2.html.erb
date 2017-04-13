@@ -9,33 +9,42 @@
         <% else %>
           <dd><%= @copier.supported_name %></dd>
         <% end %>
-          
-        
+      
+        <dt>Supports Papercut embeded appplication: </dt>
+        <dd><%= @copier.supported_status %></dd>
+      </dl>
+    </div>
+    
+     <div class="col-md-6">
+       <dl class="dl-horizontal">
         <dt>Manufacturer: </dt>
         <dd><%= @copier.oem %></dd>
         
         <dt>Marketer: </dt>
         <dd><%= @copier.marketer %></dd>
-      </dl>
+       </dl>
     </div>
-    <div class="col-md-6">
-      <dl class="dl-horizontal">
-        <dt>Also sold as: </dt>
-        <dd><%= @copier.aka %></dd>
-        
-        <dt>Introduction date: </dt>
-        <dd><%= @copier.intro_date %></dd>
-        
-        <dt>Discontinued date: </dt>
-        <dd><%= @copier.disc_date %></dd>
-      </dl>
-    </div>
+    
   </div>
+   
+
   
   <!-- break -->
   <hr>
   
-  <div class="row">
+  <button class="btn" id="hidden_details">Show details</button>
+  
+  <!-- break -->
+  
+ 
+  
+  <!------------- hidden ------------------>
+  
+  <div class="copier_details">
+  
+  <hr>
+    
+    <div class="row">
     <div class="col-md-12">
       <dl class="dl-horizontal">
         <dt>General notes: </dt>
@@ -44,7 +53,6 @@
     </div>
   </div>
   
-  <!-- break -->
   <hr>
   
   <div class="row">
@@ -117,6 +125,27 @@
       </dl>
     </div>
     
+  </div>
+  
+  <hr>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <dl class="dl-horizontal">
+        <dt>Also sold as: </dt>
+        <dd><%= @copier.aka %></dd>
+        
+        <dt>Introduction date: </dt>
+        <dd><%= @copier.intro_date %></dd>
+        
+        <dt>Discontinued date: </dt>
+        <dd><%= @copier.disc_date %></dd>
+      </dl>
+    </div>
+  </div>
+  
+  
+  
   </div>
   
   

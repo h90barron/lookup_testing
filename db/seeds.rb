@@ -95,4 +95,8 @@
   
 # end
 
+
 User.create(name: "Hunter B", email: "admin@hunter.com", password: "foobar", password_confirmation: "foobar" )
+
+
+

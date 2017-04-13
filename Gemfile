@@ -19,6 +19,7 @@ gem 'faker'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'roo'
+gem 'puma', '3.4.0'
 
 
 

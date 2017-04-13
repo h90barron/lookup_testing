@@ -1,24 +1,32 @@
 <%= form_for @request do |f| %>
   <div class="form-group">
-    <%= f.text_field :user_name, placeholder: "Requester's name", class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.text_field :user_phone, placeholder: "Phone number", class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
+    <%= f.label :model %>
     <%= f.text_field :req_name, placeholder: "Copier Name", class: "form-control" %>
   </div>
   
   <div class="form-group">
-    <%= f.label :manufacturer %>
-    <%= f.collection_select :req_oem, Oem.all, :name, :name, prompt: true  %>
+    <%= f.label :name %>
+    <%= f.text_field :user_name, placeholder: "Requester's name", class: "form-control" %>
   </div>
   
   <div class="form-group">
-    <%= f.label :marketer %>
-    <%= f.collection_select :req_marketer, Oem.all, :name, :name, prompt: true %>
+    <%= f.label :email %>
+    <%= f.email_field :user_phone, placeholder: "Email", class: "form-control" %>
+  </div>
+  
+  
+  <div class="form-group">
+    <p>
+      <%= f.label :manufacturer %>
+      <%= f.collection_select :req_oem, Oem.all, :name, :name, prompt: true  %>
+    </p>
+  </div>
+  
+  <div class="form-group">
+    <p>
+      <%= f.label :marketer %>
+      <%= f.collection_select :req_marketer, Oem.all, :name, :name, prompt: true %>
+    </p>
   </div>
   
   <p></p>
@@ -30,9 +38,11 @@
       <%= f.select :req_supported_status, options_for_select(["Supported", "Not Supported", "Not available"]), prompt: true %>
     </div>
     <div class="field">
+      <%= f.label :supported_notes %>
       <%= f.text_field :req_supported_notes_01, placeholder: "Notes on supported status", class: "form-control" %>
     </div>
     <div class="field">
+      <%= f.label :supported_notes_continued %>
       <%= f.text_field :req_supported_notes_02, placeholder: "Notes on supported status (additional)", class: "form-control" %>
     </div>
   </div>
@@ -51,6 +61,7 @@
     </div>
     
     <div class="field">
+      <%= f.label :connector_details %>
       <%= f.text_field :req_pcb_details_01, placeholder: "Details for connector", class: "form-control" %>
     </div>
   </div>
@@ -69,6 +80,7 @@
     </div>
     
     <div class="field">
+      <%= f.label :connector_details %>
       <%= f.text_field :req_pcb_details_02, placeholder: "Details for connector", class: "form-control" %>
     </div>
   </div>
@@ -77,6 +89,7 @@
   
   <div class="form-group">
     <div class="field">
+      <%= f.label :general_notes %>
       <%= f.text_field :req_general_notes, placeholder: "General notes", class: "form-control" %>
     </diV>
   </div>
@@ -85,6 +98,7 @@
   
   <div class="form-group">
     <div class="field">
+      <%= f.label :also_sold_as %>
       <%= f.text_field :req_aka, placeholder: "Also sold as", class: "form-control" %>
     </div>
   </div>
@@ -125,6 +139,7 @@
   
   <div class="form-group">
     <div class="field">
+      <%= f.label :card_reader_details %>
       <%= f.text_field :req_card_reader_support, placeholder: "Card reader support", class: "form-control" %>
     </div>
   </div>
@@ -132,6 +147,7 @@
   
   <div class="form-group">
     <div class="field">
+      <%= f.label :embedded_platform_details %>
       <%= f.text_field :req_embedded_platform, placeholder: "Embedded platform", class: "form-control" %>
     </div>
   </div>

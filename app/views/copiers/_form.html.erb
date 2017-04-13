@@ -22,7 +22,7 @@
     </p>
   </div>
 
-  
+  <!------------------- supported section --------------------->  
   
   <div class="form-group">
     <div class="field">
@@ -42,55 +42,9 @@
   </div>
   
   <hr>
+  <!---------------- general notes and aka ----------------->
   
-  <div class="form-group">
-    <div class="field">
-      <p>
-        <%= f.label :acdi_vending_harness %>
-        <%= f.collection_select :acdi_vending_harness_01, Oem.all, :name, :name, prompt: true %>
-      </p>
-    </div>
-    
-    <div class="field">
-      <p>
-        <%= f.label :oem_vending_harness %>
-        <%= f.collection_select :oem_vending_harness_01, Oem.all, :name, :name, prompt: true %>
-      </p>
-    </div>
-    
-    <div class="field">
-      <%= f.label :connector_details %>
-      <%= f.text_field :pcb_details_01, placeholder: "Details for connector", class: "form-control" %>
-    </div>
-  </div>
-  
-  <hr>
-  
-  <div class="form-group">
-    <div class="field">
-      <p>
-        <%= f.label :secondary_acdi_vending_harness %>
-        <%= f.collection_select :acdi_vending_harness_02, Oem.all, :name, :name, prompt: true %>
-      </p>
-    </div>
-    
-    <div class="field">
-      <p>
-        <%= f.label :secondary_oem_vending_harness %>
-        <%= f.collection_select :oem_vending_harness_02, Oem.all, :name, :name, prompt: true %>
-      </p>
-    </div>
-    
-    <div class="field">
-      <%= f.label :secondary_connector_details %>
-      <%= f.text_field :pcb_details_02, placeholder: "Details for connector", class: "form-control" %>
-    </div>
-  </div>
-  
-
-  <hr>
-  
-  <div class="form-group">
+    <div class="form-group">
     <div class="field">
       <%= f.label :general_notes %>
       <%= f.text_field :general_notes, placeholder: "General notes", class: "form-control" %>
@@ -107,6 +61,57 @@
   
   
   <hr>
+  <!--------------- harness group 1 ---------------->
+  
+  <div class="form-group">
+    <div class="field">
+      <p>
+        <%= f.label :acdi_vending_harness %>
+        <%= f.select :acdi_vending_harness_01, options_for_select(["Option 1", "Option 2"]), prompt: true %>
+      </p>
+    </div>
+    
+    <div class="field">
+      <p>
+        <%= f.label :oem_vending_harness %>
+        <%= f.select :oem_vending_harness_01, options_for_select(["Option 1", "Option 2"]), prompt: true %>
+      </p>
+    </div>
+    
+    <div class="field">
+      <%= f.label :connector_details %>
+      <%= f.text_field :pcb_details_01, placeholder: "Details for connector", class: "form-control" %>
+    </div>
+  </div>
+  
+  <hr>
+  <!--------------- harness group 2 ---------------->
+  
+  <div class="form-group">
+    <div class="field">
+      <p>
+        <%= f.label :secondary_acdi_vending_harness %>
+        <%= f.select :acdi_vending_harness_02, options_for_select(["Option 1", "Option 2"]), prompt: true %>
+      </p>
+    </div>
+    
+    <div class="field">
+      <p>
+        <%= f.label :secondary_oem_vending_harness %>
+        <%= f.select :oem_vending_harness_02, options_for_select(["Option 1", "Option 2"]), prompt: true %>
+      </p>
+    </div>
+    
+    <div class="field">
+      <%= f.label :secondary_connector_details %>
+      <%= f.text_field :pcb_details_02, placeholder: "Details for connector", class: "form-control" %>
+    </div>
+  </div>
+
+
+  <hr>
+  
+  <!------------------------ extra details ------------------------>
   
   <div class="form-group">
     <div class="field">

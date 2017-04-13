@@ -12,11 +12,11 @@ class CopierRequestsController < ApplicationController
   def create
     @request = CopierRequest.new copier_request_params
     if @request.save
-      flash[:notice] = "Request submitted successfully"
+      flash.now[:notice] = "Request submitted successfully"
     else
-      flash[:notice] = "Request failed to submit"
+      flash.now[:notice] = "Request failed to submit"
     end
-    redirect_to '/copiers'
+    # redirect_to '/copiers'
   end
   
   def index

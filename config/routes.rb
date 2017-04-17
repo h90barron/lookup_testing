@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   post    '/imports',        to: "imports#create"
   get     '/imports/export', to: "imports#export", defaults: { format: 'csv' }
   
+  
+  get     '/static_pages/front_door', to: "static_pages#front_door"
+  post    '/static_pages/grant_access', to: "static_pages#grant_access"
+  
   #using post above since post method to that route is not being used
   
   resources :copier_requests

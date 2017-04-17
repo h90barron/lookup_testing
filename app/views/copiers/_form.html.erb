@@ -3,14 +3,14 @@
   
   <div class="form-group">
     <p>
-      <%= f.label :model %>
+      <%= f.label :model, raw("Model number*") %>
       <%= f.text_field :name, placeholder: "Copier Name", class: "form-control" %>
     </p>
   </div>
   
   <div class="form-group">
     <p>
-      <%= f.label :manufacturer %>
+      <%= f.label :manufacturer, raw("Manufacturer*") %>
       <%= f.collection_select :oem, Oem.all, :name, :name, prompt: true %>
     </p>
   </div>
@@ -184,3 +184,12 @@
 <% end %>
 
 <button class="btn" id="hidden_details">Show details</button>
+
+
+<div class="container" style="padding: 20px;">
+  <div class="row">
+    <div class="field">
+      <p>*Starred fields are required</p>
+    </div>
+  </div>
+</div>

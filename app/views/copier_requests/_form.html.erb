@@ -1,23 +1,23 @@
 <%= form_for @request do |f| %>
   <div class="form-group">
-    <%= f.label :model, raw("Friend&rsquo;s email address") %>
+    <%= f.label :model, raw("Model number*") %>
     <%= f.text_field :req_name, placeholder: "Model or name of the copier", class: "form-control" %>
   </div>
   
   <div class="form-group">
-    <%= f.label :name %>*
+    <%= f.label :name, raw("Name of the requester*")%>
     <%= f.text_field :user_name, placeholder: "Requester's name", class: "form-control" %>
   </div>
   
   <div class="form-group">
-    <%= f.label :email %>*
-    <%= f.email_field :user_phone, placeholder: "Email", class: "form-control" %>
+    <%= f.label :email, raw("Email*") %>
+    <%= f.email_field :user_email, placeholder: "Email", class: "form-control" %>
   </div>
   
   
   <div class="form-group">
     <p>
-      <%= f.label :manufacturer %>*
+      <%= f.label :manufacturer, raw("Manufacturer*") %>
       <%= f.collection_select :req_oem, Oem.all, :name, :name, prompt: true  %>
     </p>
   </div>
@@ -180,7 +180,7 @@
 <div class="container" style="padding: 20px;">
   <div class="row">
     <div class="field">
-      <p>*Starred fields are required</p>
+      <p>**Starred fields are required</p>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 class Copier < ActiveRecord::Base
-  # validates :name, uniqueness: true
+  validates :name, :oem, presence: true
   
   
   
@@ -10,25 +10,20 @@ class Copier < ActiveRecord::Base
   # end
   
   def self.search(search)
-      arr = search[:text_search].split(' ')
-      if arr.length == 2
-        result = where("name LIKE ?", "%#{arr[0]}%")
-        result = result.where("name LIKE ?", "%#{arr[1]}%")
-        result = result.where("oem LIKE ?", "%#{ search[:oem_cont]}%") if search[:oem_cont].present?
-      else 
-        result = where("name LIKE ?", "%#{arr[0]}%" )
-        result = result.where("oem LIKE ?", "%#{ search[:oem_cont]}%") if search[:oem_cont].present?
-      end
-      # and_query_bldr = "(name LIKE ?" 
-      # if arr.length > 1
-        
-      # result = where("name LIKE ?", "%#{search[:text_search]}%")
+      # arr = search[:text_search].split(' ')
+      # if arr.length == 2
+      #   result = where("name LIKE ?", "%#{arr[0]}%")
+      #   result = result.where("name LIKE ?", "%#{arr[1]}%")
+      #   result = result.where("oem LIKE ?", "%#{ search[:oem_cont]}%") if search[:oem_cont].present?
+      # else 
+      #   result = where("name LIKE ?", "%#{arr[0]}%" )
+      #   result = result.where("oem LIKE ?", "%#{ search[:oem_cont]}%") if search[:oem_cont].present?
+      # end
       
-      if result.empty?
-          result = where("oem LIKE ?", "%#{search}%")
-      end
-      return result.order(name: "desc")
-      #where("manufacturer LIKE ?", "%#{search}%")
+      # if result.empty?
+      #     result = where("oem LIKE ?", "%#{search}%")
+      # end
+      # return result.order(name: "desc")
   end
   
   

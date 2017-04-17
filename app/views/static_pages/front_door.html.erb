@@ -1,0 +1,17 @@
+<h1>Access wall</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:access, url: static_pages_grant_access_path) do |f| %>
+
+      <%= f.label :passcode %>
+      <%= f.password_field :passcode, class: 'form-control' %>
+      
+      <%= f.submit "Gain Access", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+</div>

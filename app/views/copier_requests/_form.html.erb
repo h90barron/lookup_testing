@@ -1,23 +1,23 @@
 <%= form_for @request do |f| %>
   <div class="form-group">
-    <%= f.label :model %>
-    <%= f.text_field :req_name, placeholder: "Copier Name", class: "form-control" %>
+    <%= f.label :model, raw("Friend&rsquo;s email address") %>
+    <%= f.text_field :req_name, placeholder: "Model or name of the copier", class: "form-control" %>
   </div>
   
   <div class="form-group">
-    <%= f.label :name %>
+    <%= f.label :name %>*
     <%= f.text_field :user_name, placeholder: "Requester's name", class: "form-control" %>
   </div>
   
   <div class="form-group">
-    <%= f.label :email %>
+    <%= f.label :email %>*
     <%= f.email_field :user_phone, placeholder: "Email", class: "form-control" %>
   </div>
   
   
   <div class="form-group">
     <p>
-      <%= f.label :manufacturer %>
+      <%= f.label :manufacturer %>*
       <%= f.collection_select :req_oem, Oem.all, :name, :name, prompt: true  %>
     </p>
   </div>
@@ -29,22 +29,27 @@
     </p>
   </div>
   
-  <p></p>
-  
-  
-   <div class="form-group">
-    <div class="field">
+  <div class="form-group">
+    <p>
       <%= f.label :supported_status %>
       <%= f.select :req_supported_status, options_for_select(["Supported", "Not Supported", "Not available"]), prompt: true %>
-    </div>
+    </p>
+  </div>
+  <p></p>
+  
+  <div class="copier_details">
+  
+   <div class="form-group">
     <div class="field">
       <%= f.label :supported_notes %>
       <%= f.text_field :req_supported_notes_01, placeholder: "Notes on supported status", class: "form-control" %>
     </div>
+      
     <div class="field">
-      <%= f.label :supported_notes_continued %>
-      <%= f.text_field :req_supported_notes_02, placeholder: "Notes on supported status (additional)", class: "form-control" %>
+      <%= f.label :embedded_platform_details %>
+      <%= f.text_field :req_embedded_platform, placeholder: "Embedded platform", class: "form-control" %>
     </div>
+  
   </div>
   
   <p></p>
@@ -91,7 +96,7 @@
     <div class="field">
       <%= f.label :general_notes %>
       <%= f.text_field :req_general_notes, placeholder: "General notes", class: "form-control" %>
-    </diV>
+    </div>
   </div>
   
   <p></p>
@@ -145,21 +150,37 @@
   </div>
   
   
-  <div class="form-group">
-    <div class="field">
-      <%= f.label :embedded_platform_details %>
-      <%= f.text_field :req_embedded_platform, placeholder: "Embedded platform", class: "form-control" %>
-    </div>
-  </div>
-  
   <div class="hidden_id_field">
     <div class="field">
       <%= f.text_field :copr_id %>
     </div>
   </div>
   
-  <div class="form-group">
-    <%= f.submit class: "btn btn-primary" %>
   </div>
   
+  <div class="row">
+    <div class="col-md-2">
+      <div class="form-group">
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
+    </div>
+    <!--<div class="col-md-10">-->
+    <!--  <div class="form-group">-->
+    <!--    <button class="btn" id="hidden_details">Show details</button>-->
+    <!--  </div>-->
+    <!--</div>-->
+  </div>
+  
+  
 <% end %>
+
+<button class="btn" id="hidden_details">Show details</button>
+
+
+<div class="container" style="padding: 20px;">
+  <div class="row">
+    <div class="field">
+      <p>*Starred fields are required</p>
+    </div>
+  </div>
+</div>

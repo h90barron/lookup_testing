@@ -22,15 +22,17 @@
     </p>
   </div>
 
+  <div class="form-group">
+    <p>
+      <%= f.label :supported_status %>
+      <%= f.select :supported_status, options_for_select(["Supported", "Not Supported", "Unknown"]), prompt: true %>
+    </p>
+  </div>
   <!------------------- supported section --------------------->  
+
+  <div class="copier_details">
   
   <div class="form-group">
-    <div class="field">
-      <p>
-        <%= f.label :supported_status %>
-        <%= f.select :supported_status, options_for_select(["Supported", "Not Supported", "Unknown"]), prompt: true %>
-      </p>
-    </div>
     <div class="field">
       <%= f.label :supported_notes %>
       <%= f.text_field :supported_notes_01, placeholder: "Notes on supported status", class: "form-control" %>
@@ -172,8 +174,13 @@
     </div>
   </div>
   
+  </div>
+  
+  
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
   </div>
   
 <% end %>
+
+<button class="btn" id="hidden_details">Show details</button>

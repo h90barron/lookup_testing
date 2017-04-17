@@ -13,8 +13,8 @@ class CopiersController < ApplicationController
       flash[:notice] = "Copier successfully created!"
       redirect_to @copier
     else
-      flash[:notice] = "Copier not successfully created"
-      redirect_to root_url
+      flash[:notice] = "Copier not successfully created. Please check required fields."
+      redirect_to action: "new"
     end
   end
   
@@ -30,47 +30,20 @@ class CopiersController < ApplicationController
   end
   
   def index
-    # testing new search ######################
+    # testing new search
+    
     if params.has_key?(:copier_search)
       #@copier = Copier.search(params[:copier_search])
       @copier = basic_search(params[:copier_search])
       @search_text = params[:copier_search][:text_search]
+      @copier = @copier.paginate(page: params[:page]) if !@copier.nil?
     else 
-      @copier = Copier.all
+      # @copier = Copier.all
       @search_text = ""
     end
     
-    @copier = @copier.paginate(page: params[:page])
-    ############################################
-    
-    # @q = Copier.ransack(params[:q])
-    # @copier = @q.result
-    # @copier = @copier.paginate(page: params[:page])
     # log_search params[:q]
     
-    
-    ##############ransack testing#############################
-    # if !(params[:q][:name_cont].empty?)
-    #   raise
-    #   params[:q][:combinator] = 'or'
-    #   params[:q][:groupings] = []
-    #   custom_words = params[:q][:name_cont]
-    #   # params = params[:q].delete :name_cont
-    #   custom_words.split(' ').each_with_index do |word, index|
-    #     params[:q][:groupings][index] = {name_cont: word}
-    #   end
-    # end
-    
-    
-    # @q = Copier.ransack(params[:q])
-    # @copier = @q.result
-    # @copier = @copier.paginate(page: params[:page])
-    #############################################################
-    
-    #@search.build_condition
-    
-    # @q = Copier.search(params[:q])
-    # @copier = @q.result
   end
   
   def edit
@@ -98,14 +71,6 @@ class CopiersController < ApplicationController
   
   private
   
-    # def copier_params
-    #   params.require(:copier).permit(:name, :oem, :marketer, :pc_embedded, :embedded_platform,
-    #                 :pc_int_scanning, :pc_dependency, :pc_dependency_detail, :general_notes, 
-    #                 :aka, :intro_date, :disc_date, :print, :scan, :copy, :fax, :card_reader_support,
-    #                 :vending_connector, :vending_connector_oem, :vending_connector_ex, :vending_connector_cpad,
-    #                 :card_reader_mode, :card_reader_types)
-    # end
-    
     
     def copier_params
       params.require(:copier).permit(:name, :oem, :marketer, :embedded_platform, :general_notes, :aka, :intro_date, :disc_date,

@@ -1,6 +1,6 @@
 module CopierRequestsHelper
     def create_copier_from_request(req)
-      if req.copr_id.nil?
+      if req.copr_id.empty?
         @copier = Copier.new(name: req.req_name, oem: req.req_oem, marketer: req.req_marketer, embedded_platform: req.req_embedded_platform, 
                       general_notes: req.req_general_notes, aka: req.req_aka, intro_date: req.req_intro_date, 
                       disc_date: req.req_disc_date, print: req.req_print, copy: req.req_copy, scan: req.req_scan, fax: req.req_fax, card_reader_support: req.req_card_reader_support, 

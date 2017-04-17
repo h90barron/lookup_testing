@@ -7,6 +7,7 @@ module SearchService
       
       # split non_numeric words into array and find numeric for name search
       non_numeric_words = []
+
       for word in search_words do
         if !(word =~ /\d/)
           non_numeric_words.append(word)
@@ -16,40 +17,55 @@ module SearchService
       end
       
       
+      
       # check if non_numerics match a manufacturer
+      # if so, set manu to manufacturer and filter after name search
       for word in non_numeric_words do
-        manu = Oem.where("lower(name) LIKE ?", ("%#{word}%").downcase)
-        if !(manu.nil?)
-          #result = result.where("lower(oem) LIKE ?", ("%#{word}%").downcase)
-          manu = word
+        manu_result = Oem.where("lower(name) = ?", ("#{word}").downcase)
+        if !(manu_result.empty?)
+          manu = manu_result.first.name
+          non_numeric_words.delete(manu)
           break
         end
       end
       
-      result = Copier.where("lower(name) LIKE ?", ("%#{numeric_word}%").downcase)
-    
-      # result = Copier.where("lower(name) LIKE ?", ("%#{search_words[0]}%").downcase)
-      # if search_words.length > 1
-      #   for word in 1..(search_words.length - 1) do
-      #     result = result.where("lower(name) LIKE ?", ("%#{search_words[word]}%").downcase)
+      
+      
+      # first check for numerics in copier name
+      if numeric_word
+        result = Copier.where("lower(name) LIKE ?", ("%#{numeric_word}%").downcase)
+      end
+      
+      
+      # FIX: search to include non-numerics other than manufacturer
+      
+      # then check for other word matches in result or from copiers if no result
+      # for word in non_numeric_words
+      #   if !result.nil?
+      #     result = result.where("lower(name) LIKE ?", ("#{word}").downcase)
+      #   else
+      #     result = Copier.where("lower(name) LIKE ?", ("#{word}").downcase)
       #   end
       # end
+      
     end
     
     
     # if manu is set filter by manufacturer
     if manu
-      result = result.where("lower(oem) LIKE ? ", ("%#{manu}%").downcase)
+      if result
+        result = result.where("lower(oem) = ? ", ("#{manu}").downcase)
+      else
+        result = Copier.where("lower(oem) = ? ", ("#{manu}").downcase)
+      end
     end
 
- 
-  
-    
+    # # return all if no result
     if result.nil?
-      result = Copier.all
+      return nil
     end
       
-    result = add_search_filters result, search
+    # result = add_search_filters result, search
     
     return result.order(name: "asc")
   
@@ -60,6 +76,9 @@ module SearchService
     # result = result.where(pc_embedded: search[:pc_embedded]) if search[:pc_embedded].present?
     return result
   end
+  
+  
+  
   
   # def self.search(search)
   #     arr = search[:text_search].split(' ')

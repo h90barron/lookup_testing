@@ -12,4 +12,7 @@ class StaticPagesController < ApplicationController
       redirect_to static_pages_front_door_url
     end
   end
+  
+  def about
+  end
 end

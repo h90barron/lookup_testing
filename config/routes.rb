@@ -22,8 +22,9 @@ Rails.application.routes.draw do
   
   
   
-  get     '/static_pages/front_door', to: "static_pages#front_door"
-  post    '/static_pages/grant_access', to: "static_pages#grant_access"
+  get     '/static_pages/front_door',     to: "static_pages#front_door"
+  post    '/static_pages/grant_access',   to: "static_pages#grant_access"
+  get     '/static_pages/about',          to: "static_pages#about"
   
   #using post above since post method to that route is not being used
   

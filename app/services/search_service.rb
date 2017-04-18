@@ -33,7 +33,7 @@ module SearchService
       
       # first check for numerics in copier name
       if numeric_word
-        result = Copier.where("LOWER(name) LIKE ?", "#{numeric_word.downcase}")
+        result = Copier.where("LOWER(name) LIKE ?", ("%#{numeric_word}%").downcase)
       end
       
 
@@ -44,10 +44,10 @@ module SearchService
       
       # then check for other word matches in result or from copiers if no result
       # for word in non_numeric_words
-      #   if defined? result and !result.empty?
-      #     result = result.where("lower(name) LIKE ?", ("#{word}").downcase)
+      #   if defined? result and !result.nil?
+      #     result = result.where("lower(name) LIKE ?", ("%#{word}%").downcase)
       #   else
-      #     result = Copier.where("lower(name) LIKE ?", ("#{word}").downcase)
+      #     result = Copier.where("lower(name) LIKE ?", ("%#{word}%").downcase)
       #   end
       # end
       

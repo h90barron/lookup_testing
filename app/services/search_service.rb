@@ -21,7 +21,7 @@ module SearchService
       # check if non_numerics match a manufacturer
       # if so, set manu to manufacturer and filter after name search
       for word in non_numeric_words do
-        manu_result = Oem.where("lower(name) = ?", ("#{word}").downcase)
+        manu_result = Oem.where("lower(name) = ?", ("%#{word}%").downcase)
         if !(manu_result.empty?)
           manu = manu_result.first.name
           non_numeric_words.delete(manu)
@@ -57,9 +57,9 @@ module SearchService
     # if manu is set filter by manufacturer
     if manu
       if result
-        result = result.where("lower(oem) = ? ", ("#{manu}").downcase)
+        result = result.where("lower(oem) = ? ", ("%#{manu}%").downcase)
       else
-        result = Copier.where("lower(oem) = ? ", ("#{manu}").downcase)
+        result = Copier.where("lower(oem) = ? ", ("%#{manu}%").downcase)
       end
     end
 

@@ -9,6 +9,17 @@ Rails.application.routes.draw do
   get     '/imports/export', to: "imports#export", defaults: { format: 'csv' }
   
   
+  # import routes, clean up
+  get   '/imports/new_copier',            to: "imports#new_copier"
+  post  '/imports/copiers',               to: "imports#import_copiers"
+  get   '/imports/new_harness',           to: "imports#new_harness"
+  post  '/imports/harnesses',             to: "imports#import_harnesses"
+  get   '/imports/new_vendor_harness',  to: "imports#new_vendor_harness"
+  post  '/imports/vendor_harnesses',      to: "imports#import_vendor_harnesses"
+  
+  
+  
+  
   get     '/static_pages/front_door', to: "static_pages#front_door"
   post    '/static_pages/grant_access', to: "static_pages#grant_access"
   
@@ -16,7 +27,7 @@ Rails.application.routes.draw do
   
   resources :copier_requests
   resources :oems
-
+  
   resources :copiers
   
   get     '/signup',    to: 'users#new'

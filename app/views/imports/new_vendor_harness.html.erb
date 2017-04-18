@@ -1,0 +1,13 @@
+<h2>New vendor harness import</h2>
+
+<hr>
+
+<h4>Import Vendor Harnesses</h4>
+
+<%= form_tag imports_vendor_harnesses_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+
+<%= link_to('Export', '#', :method => :get) %>

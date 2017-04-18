@@ -27,7 +27,7 @@
           <ul class="dropdown-menu">
             <% if admin_logged_in? %>
               <li><%= link_to 'View pending requests', copier_requests_path %></li>
-              <li><%= link_to 'Import/Export', imports_path %></li>
+              <li><%= link_to 'Import/Export', imports_new_copier_path %></li>
               <li><%= link_to('Log out', logout_path, :method => :delete) %></li>
               
             <% else %>

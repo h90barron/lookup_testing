@@ -69,14 +69,14 @@
     <div class="field">
       <p>
         <%= f.label :acdi_vending_harness %>
-        <%= f.select :acdi_vending_harness_01, options_for_select(["Option 1", "Option 2"]), prompt: true %>
+        <%= f.collection_select :acdi_vending_harness_01, Harness.all, :name, :name, prompt: true %>
       </p>
     </div>
     
     <div class="field">
       <p>
         <%= f.label :oem_vending_harness %>
-        <%= f.select :oem_vending_harness_01, options_for_select(["Option 1", "Option 2"]), prompt: true %>
+        <%= f.collection_select :oem_vending_harness_01, VendorHarness.all, :name, :name, prompt: true %>
       </p>
     </div>
     
@@ -93,14 +93,14 @@
     <div class="field">
       <p>
         <%= f.label :secondary_acdi_vending_harness %>
-        <%= f.select :acdi_vending_harness_02, options_for_select(["Option 1", "Option 2"]), prompt: true %>
+        <%= f.collection_select :acdi_vending_harness_02, Harness.all, :name, :name, prompt: true %>
       </p>
     </div>
     
     <div class="field">
       <p>
         <%= f.label :secondary_oem_vending_harness %>
-        <%= f.select :oem_vending_harness_02, options_for_select(["Option 1", "Option 2"]), prompt: true %>
+        <%= f.collection_select :oem_vending_harness_02, VendorHarness.all, :name, :name, prompt: true %>
       </p>
     </div>
     
@@ -189,7 +189,7 @@
 <div class="container" style="padding: 20px;">
   <div class="row">
     <div class="field">
-      <p>*Starred fields are required</p>
+      <p>**Starred fields are required</p>
     </div>
   </div>
 </div>

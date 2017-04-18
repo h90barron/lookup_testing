@@ -1,7 +1,9 @@
-class Harness < ActiveRecord::Base
+class VendorHarness < ActiveRecord::Base
+  
     def self.import(file)
       CSV.foreach(file.path, headers: true, encoding:'iso-8859-1:utf-8') do |row|
-        Harness.create! row.to_hash
+        VendorHarness.create! row.to_hash
       end
     end
+    
 end

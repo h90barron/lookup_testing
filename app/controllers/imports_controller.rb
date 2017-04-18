@@ -1,8 +1,8 @@
 class ImportsController < ApplicationController
-  def new
+  def new_copier
   end
   
-  def create
+  def import_copiers
     Copier.import(params[:file])
     # begin
     #   Copier.import(params[:file])
@@ -11,7 +11,25 @@ class ImportsController < ApplicationController
     # end
     #catch ActiveRecord::ActiveRecordError
 
-    render 'new'
+    render 'new_copier'
+  end
+  
+  def new_harness
+  end
+  
+  def import_harnesses
+    Harness.import(params[:file])
+    
+    render 'new_harness'
+  end
+  
+  def new_vendor_harness
+  end
+  
+  def import_vendor_harnesses
+    VendorHarness.import(params[:file])
+    
+    render 'new_vendor_harness'
   end
   
   def export

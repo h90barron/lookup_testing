@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post  '/imports/harnesses',             to: "imports#import_harnesses"
   get   '/imports/new_vendor_harness',    to: "imports#new_vendor_harness"
   post  '/imports/vendor_harnesses',      to: "imports#import_vendor_harnesses"
+  get   '/imports/new_oem',               to: "imports#new_oem"
+  post  '/imports/oems',                  to: "imports#import_oems"
   
   
   

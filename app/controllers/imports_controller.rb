@@ -32,6 +32,16 @@ class ImportsController < ApplicationController
     render 'new_vendor_harness'
   end
   
+  
+  def new_oem
+  end
+  
+  def import_oems
+    Oem.import(params[:file])
+    
+    render 'new_oem'
+  end
+  
   def export
     @copiers = Copier.all
     respond_to do |format|

@@ -34,7 +34,6 @@ module SearchService
       # first check for numerics in copier name
       if numeric_word
         result = Copier.where("lower(name) LIKE ?", ("%#{numeric_word}%").downcase)
-        # for word in non_numeric_words
       end
       
 

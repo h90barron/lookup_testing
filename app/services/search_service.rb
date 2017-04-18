@@ -34,14 +34,18 @@ module SearchService
       # first check for numerics in copier name
       if numeric_word
         result = Copier.where("lower(name) LIKE ?", ("%#{numeric_word}%").downcase)
+        # for word in non_numeric_words
       end
+      
+
+        
       
       
       # FIX: search to include non-numerics other than manufacturer
       
       # then check for other word matches in result or from copiers if no result
       # for word in non_numeric_words
-      #   if !result.nil?
+      #   if defined? result and !result.empty?
       #     result = result.where("lower(name) LIKE ?", ("#{word}").downcase)
       #   else
       #     result = Copier.where("lower(name) LIKE ?", ("#{word}").downcase)

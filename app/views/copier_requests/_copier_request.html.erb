@@ -156,7 +156,7 @@
   </div>
   
   
-  <% if (!@request.copr_id.empty?) %>
+  <% if (@request.copr_id.present? and !@request.copr_id.empty?) %>
     <dl class="dl-horizontal">
       <dt>Request type: </dt>
       <dd>Request to edit a copier that already exists</dd>

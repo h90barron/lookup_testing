@@ -278,13 +278,13 @@ footer ul li {
 }
 
 /*  matrix table */
-// #matrix-table {
-//   border-collapse: collapse;
-// }
+#matrix-table {
+  border-collapse: collapse;
+}
 
-// #matrix-table, th, tr, td {
-//   border: 1px solid rgba(0,0,0, .6);
-// }
+#matrix-table th, #matrix-table tr, #matrix-table td {
+  border: 1px solid rgba(0,0,0, .6);
+}
 
 .matrix-table-cell {
   text-align: left;

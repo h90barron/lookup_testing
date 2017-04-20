@@ -28,6 +28,21 @@
     <!--</div>-->
     
   </div>
+  
+  <hr>
+  
+  <h4>Matrix Reference</h4>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <dl class="dl-horizontal">
+      <%= div_for @matrix do |m| %>
+        <dt>Integration Matrix: </dt>
+        <dd><%= link_to m.oem.split.map(&:capitalize).join(' '), matrix_mfds_path(:matrix => m.id), target: :_blank %></dd>
+      <% end %>
+      </dl>
+    </div>
+  </div>
    
 
   
@@ -107,7 +122,7 @@
     
     <div class="col-md-6">
       <dl class="dl-horizontal">
-        <dt>Vending harness connector details: </dt>
+        <dt>Harness connector details (option 1): </dt>
         <dd><%= @copier.pcb_details_01 %></dd>
       </dl>
     </div>
@@ -129,7 +144,7 @@
     
     <div class="col-md-6">
       <dl class="dl-horizontal">
-        <dt>Connector detils (option 2): </dt>
+        <dt>Harness Connector details (option 2): </dt>
         <dd><%= @copier.pcb_details_02 %></dd>
       </dl>
     </div>
@@ -153,24 +168,11 @@
     </div>
   </div>
   
-  <hr>
-  
-  <h4>Matrix Reference</h4>
-  
-  <div class="row">
-    <div class="col-md-6">
-      <dl class="dl-horizontal">
-      <%= div_for @matrix do |m| %>
-        <dt>Integration Matrix: </dt>
-        <dd><%= link_to m.oem, matrix_mfds_path(:matrix => m.id), target: :_blank %></dd>
-      <% end %>
-      </dl>
-    </div>
-  </div>
+
   
   </div>
   
-  <button class="btn" id="hidden_details">Show details</button>
+  <button class="btn" id="hidden_details">Show more details</button>
   
   
 <!--</div>-->

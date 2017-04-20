@@ -37,3 +37,12 @@ $(document).on('turbolinks:load', function(){
         $(".copier_details").toggle(250);
     });
 });
+
+
+$(document).ready(function() {
+    $('.matrix-detail-hover').hover(function() {
+        $(this).closest('.matrix-table-cell').find('.popup').show();
+    }, function() {
+        $(this).closest('.matrix-table-cell').find('.popup').hide();
+    });
+});

@@ -277,3 +277,44 @@ footer ul li {
   text-align: center;
 }
 
+/*  matrix table */
+// #matrix-table {
+//   border-collapse: collapse;
+// }
+
+// #matrix-table, th, tr, td {
+//   border: 1px solid rgba(0,0,0, .6);
+// }
+
+.matrix-table-cell {
+  text-align: left;
+  max-width: 100px;
+}
+
+.matrix-table p {
+  font-size: 80%;
+}
+
+
+p.popup {
+    // height: 50px;
+    width: 200px;
+    //width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1;
+    display: none;
+    position: absolute;
+    
+    
+    // text-align: center;
+    // vertical-align:middle;
+    // background-color: cornflowerblue;
+    // color: white;
+    // display: none;
+    // padding-top: 8px;
+    // position: absolute;
+}

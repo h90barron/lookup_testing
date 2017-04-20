@@ -1,0 +1,13 @@
+<h2>New Matrix MFD list import</h2>
+
+<hr>
+
+<h4>Import Matrix MFD's</h4>
+
+<%= form_tag imports_matrix_mfds_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+
+<%= link_to('Export', '#', :method => :get) %>

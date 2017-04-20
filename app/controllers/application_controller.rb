@@ -6,3 +6,6 @@ class ApplicationController < ActionController::Base
   # before_action :check_access
   include SessionsHelper, CopierRequestsHelper, CopiersHelper, SearchService, MobileResolveService, StaticPagesHelper
 end
+
+
+

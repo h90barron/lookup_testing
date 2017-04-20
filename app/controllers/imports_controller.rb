@@ -42,6 +42,16 @@ class ImportsController < ApplicationController
     render 'new_oem'
   end
   
+  
+  def new_matrix_mfd
+  end
+  
+  def import_matrix_mfds
+    MatrixMfd.import(params[:file])
+    
+    render 'new_matrix_mfd'    
+  end
+  
   def export
     @copiers = Copier.all
     respond_to do |format|

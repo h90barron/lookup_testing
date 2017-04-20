@@ -20,6 +20,9 @@ class CopiersController < ApplicationController
   
   def show
     @copier = Copier.find_by(id: params[:id])
+    @test = Oem.find_by(name: @copier.oem)
+    @matrix = MatrixMfd.where("LOWER(oem) LIKE ?", "%#{@copier.oem.downcase}%")
+    # @matrix = MatrixMfd.exists?(:oem => "#%{@copier.oem.downcase}%")
     respond_to do |format|
       format.html
       format.pdf do

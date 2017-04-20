@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post  '/imports/vendor_harnesses',      to: "imports#import_vendor_harnesses"
   get   '/imports/new_oem',               to: "imports#new_oem"
   post  '/imports/oems',                  to: "imports#import_oems"
+  get   '/imports/new_matrix_mfd',        to: "imports#new_matrix_mfd"
+  post  '/imports/matrix_mfds',           to: "imports#import_matrix_mfds"
   
   
   
@@ -25,6 +27,8 @@ Rails.application.routes.draw do
   get     '/static_pages/front_door',     to: "static_pages#front_door"
   post    '/static_pages/grant_access',   to: "static_pages#grant_access"
   get     '/static_pages/about',          to: "static_pages#about"
+  
+  get     '/matrix_mfds',                 to: "matrix_mfds#show"
   
   #using post above since post method to that route is not being used
   

@@ -153,7 +153,20 @@
     </div>
   </div>
   
+  <hr>
   
+  <h4>Matrix Reference</h4>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <dl class="dl-horizontal">
+      <%= div_for @matrix do |m| %>
+        <dt>Integration Matrix: </dt>
+        <dd><%= link_to m.oem, matrix_mfds_path(:matrix => m.id), target: :_blank %></dd>
+      <% end %>
+      </dl>
+    </div>
+  </div>
   
   </div>
   

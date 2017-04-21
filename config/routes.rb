@@ -6,12 +6,14 @@ Rails.application.routes.draw do
   
   get     '/imports',        to: "imports#new"
   post    '/imports',        to: "imports#create"
-  get     '/imports/export', to: "imports#export", defaults: { format: 'csv' }
+  get     '/imports/export_copiers', to: "imports#export_copiers", defaults: { format: 'csv' }
   
   
   # import routes, clean up
   get   '/imports/new_copier',            to: "imports#new_copier"
   post  '/imports/copiers',               to: "imports#import_copiers"
+  get   '/imports/export_copiers',        to: "imports#export_copiers", defaults: { format: 'csv' }
+  
   get   '/imports/new_harness',           to: "imports#new_harness"
   post  '/imports/harnesses',             to: "imports#import_harnesses"
   get   '/imports/new_vendor_harness',    to: "imports#new_vendor_harness"

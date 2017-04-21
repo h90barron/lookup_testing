@@ -52,10 +52,10 @@ class ImportsController < ApplicationController
     render 'new_matrix_mfd'    
   end
   
-  def export
+  def export_copiers
     @copiers = Copier.all
     respond_to do |format|
-      format.csv { send_data @copiers.export, :filename => "CoperList.csv" }
+      format.csv { send_data @copiers.export, :filename => "DatabaseCopierList.csv" }
     end
   end
 end

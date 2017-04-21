@@ -29,17 +29,20 @@ class Copier < ActiveRecord::Base
   
   def self.import(file)
       CSV.foreach(file.path, headers: true, encoding:'iso-8859-1:utf-8') do |row|
-        Copier.create! row.to_hash
+        copiers = find_by_id(row["id"]) || new
+        copiers.attributes = row.to_hash
+        copiers.save
+        #Copier.create! row.to_hash
       end
   end
   
   def self.export
-    CSV.generate do |csv|
+    (CSV.generate do |csv|
       csv << column_names
       all.each do |product|
         csv << product.attributes.values_at(*column_names)
       end
-    end
+    end).encode('WINDOWS-1252', :undef => :replace, :replace => '')
   end
   
 end

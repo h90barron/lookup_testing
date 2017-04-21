@@ -36,10 +36,12 @@
   <div class="row">
     <div class="col-md-6">
       <dl class="dl-horizontal">
-      <%= div_for @matrix do |m| %>
-        <dt>Integration Matrix: </dt>
-        <dd><%= link_to m.oem.split.map(&:capitalize).join(' '), matrix_mfds_path(:matrix => m.id), target: :_blank %></dd>
-      <% end %>
+        <% if @copier.supported_status == 'Supported' %>
+          <%= div_for @matrix do |m| %>
+            <dt>Integration Matrix: </dt>
+            <dd><%= link_to m.oem.split.map(&:capitalize).join(' '), matrix_mfds_path(:matrix => m.id), target: :_blank %></dd>
+          <% end %>
+        <% end %>
       </dl>
     </div>
   </div>

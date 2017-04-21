@@ -1,4 +1,4 @@
-<h2><%= @matrix.oem %></h2>
+<h2><%= @matrix.oem.split.map(&:capitalize).join(' ') %></h2>
 
 
 <%= render 'matrix' %>

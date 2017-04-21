@@ -24,17 +24,19 @@
   
   <div class="form-group">
     <p>
+      <%= f.label :supported_status, raw("Supported Status*") %>
+      <%= f.select :req_supported_status, options_for_select(["Supported", "Not Supported", "Not available"]), prompt: true %>
+    </p>
+  </div>
+  
+  
+  <div class="form-group">
+    <p>
       <%= f.label :marketer %>
       <%= f.collection_select :req_marketer, Oem.all, :name, :name, prompt: true %>
     </p>
   </div>
   
-  <div class="form-group">
-    <p>
-      <%= f.label :supported_status %>
-      <%= f.select :req_supported_status, options_for_select(["Supported", "Not Supported", "Not available"]), prompt: true %>
-    </p>
-  </div>
   <p></p>
   
   <div class="copier_details">

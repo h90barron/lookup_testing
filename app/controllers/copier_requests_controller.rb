@@ -20,7 +20,7 @@ class CopierRequestsController < ApplicationController
   end
   
   def index
-    @requests = CopierRequest.all
+    @requests = CopierRequest.find_by(req_approved_status: false)
   end
   
   def show
@@ -56,7 +56,7 @@ class CopierRequestsController < ApplicationController
     req = CopierRequest.find_by(id: params[:id])
     if create_copier_from_request req
       flash[:notice] = "Successful creation!"
-      req.delete
+      req.req_approved_status = true
       redirect_to action: :index
     else
       flash[:notice] = "Unsuccessful..."

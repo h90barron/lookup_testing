@@ -1,4 +1,6 @@
 module CopierRequestsHelper
+    # create copier from request. if copr_id is present in req params then update existing copier. if not then create new.
+
     def create_copier_from_request(req)
       if req.copr_id.empty?
         @copier = Copier.new(name: req.req_name, oem: req.req_oem, marketer: req.req_marketer, embedded_platform: req.req_embedded_platform, 
@@ -13,7 +15,6 @@ module CopierRequestsHelper
       else
         
         @copier = Copier.find_by(id: req.copr_id)
-        #return true if @copier.update_columns(general_notes: "DIRTY DEBUG")
         return true if @copier.update_columns(name: req.req_name, oem: req.req_oem, marketer: req.req_marketer, embedded_platform: req.req_embedded_platform, 
                       general_notes: req.req_general_notes, aka: req.req_aka, intro_date: req.req_intro_date, 
                       disc_date: req.req_disc_date, print: req.req_print, copy: req.req_copy, scan: req.req_scan, fax: req.req_fax, card_reader_support: req.req_card_reader_support, 
@@ -25,6 +26,8 @@ module CopierRequestsHelper
       end
       
     end
+    
+    # creates request from existing copier. all fields are populated with the copiers field vals. 
     
     def create_request_from_copier(copier)
       @request = CopierRequest.new(req_name: copier.name, req_oem: copier.oem, req_marketer: copier.marketer, req_embedded_platform: copier.embedded_platform, req_general_notes: copier.general_notes,

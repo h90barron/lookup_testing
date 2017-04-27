@@ -3,10 +3,19 @@ class CopiersController < ApplicationController
   before_action :logged_in_admin, only: [:new, :create, :edit, :destroy]
   #before_action :check_for_mobile, only: [:show]
   
+  # COMMENTS
+  # controller methods are named corresponding to their view templates. when a request is routed to a particular 
+  # controller method rails will automatically look for the corresponding view for that method. If the method doesn't
+  # require a view (for example the create method simply creates a new copier and doesn't need it's own view) then the 
+  # method should redirect the request (after processing) to the right path. 
+  
+  # creates instance variable which is tied to the new form
   def new
     @copier = Copier.new
   end
   
+  # attempts to save new copier from values in copier_params. if values pass model validation save will be successful and copier
+  # will be created. else will redirect to back to new copier form ('new')
   def create
     @copier = Copier.new copier_params
     if @copier.save

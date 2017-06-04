@@ -17,7 +17,6 @@ module SearchService
       end
       
       
-      
       # check if non_numerics match a manufacturer
       # if so, set manu to manufacturer and filter after name search
       for word in non_numeric_words do

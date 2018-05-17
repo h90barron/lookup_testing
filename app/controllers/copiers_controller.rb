@@ -48,6 +48,7 @@ class CopiersController < ApplicationController
     if params.has_key?(:copier_search)
       #@copier = Copier.search(params[:copier_search])
       @copier = basic_search(params[:copier_search])
+      # raise
       @search_text = params[:copier_search][:text_search]
       @copier = @copier.paginate(page: params[:page]) if !@copier.nil?
     else 

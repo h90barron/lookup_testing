@@ -45,4 +45,8 @@ class Copier < ActiveRecord::Base
     end).encode('WINDOWS-1252', :undef => :replace, :replace => '')
   end
   
+  # def self.mass_compare
+  #     CSV.foreach(file.path, headers: true, encoding:'iso-8859-1:utf-8') do |row|
+  #       basic
+  
 end
